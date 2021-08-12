@@ -1217,11 +1217,11 @@ select {
 .register-cta {
 	padding: 20px 0;
 	margin: 20px 0 0;
-	border-top: 1px solid #d2d2d2
+	border-top: 1px solid #d2d2d2;
 }
 
 .calls-to-action {
-	background: #f0f1e9
+	background: #f0f1e9;
 }
 
 .calls-to-action .wrapper {
@@ -5785,6 +5785,194 @@ section ol {
 		max-width: 992px
 	}
 }
+
+/*
+--- 2021 STYLES BEGIN---
+*/
+
+#top-green-bar {
+	background-color: #b8d432;
+}
+
+#top-green-bar-wrapper {
+	margin-right: 0;
+}
+
+#top-green-bar-items > li > a {
+	color: #00584d;
+}
+
+#donate-button {
+	background-color: transparent;
+	border-left: solid white 1px;
+}
+
+#utility-nav > ul > li:not(:first-child) {
+	border-left: solid #02a99f 2px;
+}
+
+#utility-nav > ul > li > a {
+	color: #02a99f;
+	font-weight: bold;
+}
+
+#search-bar {
+	width: 30.6%;
+	float: left;
+	background-color: #02a99f;
+	border-radius: 0;
+}
+
+input[type="search"].search-field::placeholder {
+	color: #fff;
+	opacity: 1; /* Firefox */
+}
+  
+input[type="search"].search-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #fff;
+}
+  
+input[type="search"].search-field::-ms-input-placeholder { /* Microsoft Edge */
+   color: #fff;
+}
+
+#main-nav {
+	background-color: #00584c;
+}
+
+#main-nav > div > ul > li:not(:first-child) {
+	border-left: solid #b8d432 2px;
+}
+
+#main-nav > div > ul > li > a {
+	color: #b8d432;
+}
+
+#news-section > ul div> div > li > header > h3 {
+	padding: 40px 0 20px;
+	color: #00584c;
+}
+
+#news-section > ul div> div > li > div.description {
+	line-height: 2;
+}
+
+#pager-container {
+	border-top: 0;
+}
+
+#pager-container div span {
+	background-color: transparent;
+	color: #02a99e;
+}
+
+#mission-section {
+	border-top: solid #02a99e 1px;
+	border-bottom: solid #02a99e 1px;
+	padding: 30px;
+}
+
+#mission-section h2 {
+	color: #00584d;
+}
+
+#mag-title {
+	text-transform: capitalize;
+	border-bottom: 0;
+	color: #02a99e;
+}
+
+#mag-subtitle {
+	text-transform: uppercase;
+	color: #00584d;
+}
+
+#mag-links h4 a {
+	color: #37b5af;
+}
+
+#mag-links p a {
+	color: #00584d;
+	font-weight: bold;
+}
+
+#footer-container {
+	margin: 0;
+	max-width: initial;
+}
+
+#footer-container section:nth-child(1) {
+	background-color: #00584c;
+}
+
+#footer-container section:not(first-child) {
+	background-color: #02a99f;
+}
+
+.bold-text {
+	font-weight: bold;
+}
+
+#footer-container section:first-child > header > p, #footer-container section:first-child > header > p > a {
+	text-transform: uppercase;
+	color: #02a99d;
+	text-decoration: none;
+	line-height: 2;
+}
+
+#footer-container section:nth-child(2) input {
+	border-radius: 0;
+}
+
+#footer-container section:nth-child(2) input {
+	border-radius: 0;
+}
+
+#footer-container section:nth-child(2) table tr td span span {
+	color: #00584c;
+}
+
+#footer-container input[type="text"].search-field::placeholder {
+	color: #02a99f;
+	opacity: 1; /* Firefox */
+}
+  
+#footer-container input[type="text"].search-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #02a99f;
+}
+  
+#footer-container input[type="text"].search-field::-ms-input-placeholder { /* Microsoft Edge */
+   color: #02a99f;
+}
+
+#footer-container tr td input[type="submit"] {
+	background-color: #00584c;
+	opacity: 1; /* Firefox */
+}
+  
+#footer-container tr td input[type="submit"] { /* Internet Explorer 10-11 */
+	background-color: #00584c;
+}
+  
+#footer-container input[type="submit"] { /* Microsoft Edge */
+	background-color: #00584c;
+}
+
+#footer-container section:nth-child(3) div div header h4, #footer-container section:nth-child(3) div div p, #footer-container section:nth-child(4) header h4 {
+	color: #00584c;
+}
+
+#footer-container section:nth-child(3) p a {
+	background-color: #00584c;
+    border: 0;
+    border-radius: 0;
+    color: #02a99f;
+    text-transform: uppercase;
+}
+
+/*
+--- 2021 STYLES END ---
+*/
 
 @media(min-width:$breakpoint-min-1280) {
 	.container {
