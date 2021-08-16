@@ -158,7 +158,7 @@
                      <div id="top-green-bar-wrapper" class="wrapper">
                         <ul id="top-green-bar-items" class="ul-list-inline link-list">
                            <li role="nav" class="topic-nav">
-                              <i class="icon-triangle-green icon-after"></i><a href="#" data-link="topic-nav-panel" class="js-dropdown-link">Find by Topic</a>
+                              <a href="#" id="find-by-topic" data-link="topic-nav-panel" class="js-dropdown-link"><div id="top-arrow-right"></div>Find by Topic</a>
                               <ul class="js-dropdown-panel dropdown-panel topic-nav-panel" id="topic-nav-panel">
                                  <li> <a href="https://www.nrpa.org/search?query=Accreditation">Accreditation</a></li>
                                  <li> <a href="https://www.nrpa.org/search?query=ADA">ADA</a></li>
@@ -198,7 +198,6 @@
                            <li><a href="http://forms.nrpa.org/profile">Profile</a></li>
                            <li><a href="http://www.nrpa.org/membership">Join</a></li>
                            <li id="donate-button" class="callout callout--donate"><a href="https://www.nrpa.org/our-work/donate">Donate!<span class="hidden">/Renew</span></a></li>
-                           <li></li>
                         </ul>
                         <div class="js-dropdown-panel dropdown-panel login-panel" id="login-panel">
                            <h2>this is the login panel</h2>
@@ -229,8 +228,7 @@
                         <div class="welcomeMessage right"></div>
                         <div id="search-bar" class="form-search header right">
                            <input type="search" class="search-field" placeholder="search" onkeypress="return onPushEnterButton(event)">
-                           <input type="submit" class="icon-search-blue submit-btn" value="">
-                        </div><i class="icon-triangle-green icon-after"></i>
+                           <input type="submit" id="search-arrow-right" class="submit-btn" value="">
                      </div>
                   </div>
                </header>
@@ -518,7 +516,7 @@
                   </div>
                </nav>
                <section class="slider-container">
-                  <div class="main-slider">
+                  <div id="main-slider" class="main-slider">
                      <div>
                         <div class="block sliderpage">
                            <picture>
@@ -799,7 +797,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="ad-container txtcenter">
+                  <div id="ad-container" class="ad-container txtcenter">
                      <div class="wrapper">
                         <script type="text/javascript">
                            var rnd = window.rnd || Math.floor(Math.random()*10e6);
@@ -816,7 +814,7 @@
                <footer class="l-footer">
                   <div id ="footer-container" class="footer-container">
                      <section class="sitewide-footer-section contact-us">
-                        <header>
+                        <div>
                            <style>
                               /*
                                  #h401 {
@@ -824,46 +822,53 @@
                                  }
                                  */
                            </style>
+                           <img src="./assets/nrpa-new-logo.png" alt="">
                            <p class="bold-text">National Recreation and Park Association (NRPA)</p>
-                           <p>22377 Belmont Ridge Road</p>
-                           <p>Ashburn, VA 20148-4501</p>
-                           <p>PH: 800.626.NRPA (6772)</p>
+                           <p>22377 Belmont Ridge Road<br>
+                           Ashburn, VA 20148-4501<br>
+                           PH: 800.626.NRPA (6772)</p>
                            <p class="bold-text"><a title="Contact NRPA" href="https://www.nrpa.org/link/d2e65a41598f4969a473f92ace9f2381.aspx">Contact Us</a></p>
                            <p id="h401" class="bold-text"><a title="Press Inquiries" href="https://www.nrpa.org/link/971c8c0a005c4037bb2cfacfe284c847.aspx">Press Inquiries</a></p>
-                           <p id="h401" class="bold-text"><a title="privacy policy for the National Recreation and Park Association" href="https://www.nrpa.org/link/5a1e759748cb4d7e8294a687eaa533a7.aspx">Privacy Policy<br /></a></p>
-                        </header>
+                           <p id="h401" class="bold-text"><a title="privacy policy for the National Recreation and Park Association" href="https://www.nrpa.org/link/5a1e759748cb4d7e8294a687eaa533a7.aspx">Privacy Policy</a></p>
+                        </div>
                      </section>
                      <section class="sitewide-footer-section email-signup">
                         <script type="text/javascript" src="https://www.nrpa.org/Static/js/nrpa.realmagnet.10602.js"></script>
                         <div id="landing_container"></div>
                      </section>
                      <section class="sitewide-footer-section field-guide">
-                        <img src="https://www.nrpa.org/contentassets/603fba2515ce4ee09a40ffefb6455017/2021nrpafieldguide_110x140.jpg" alt="Parks &amp; Recreation Field Guide" title="Parks &amp; Recreation Field Guide">
-                        <div class="clearfix">
-                           <div class="text">
-                              <header>
-                                 <h4>Parks &amp; Recreation Field Guide</h4>
-                              </header>
-                              <p>The Field Guide delivers suppliers, vendors and service providers to park and recreation agencies throughout the United States and Canada.</p>
+                        <div id="mag-div">
+                           <img src="https://www.nrpa.org/contentassets/603fba2515ce4ee09a40ffefb6455017/2021nrpafieldguide_110x140.jpg" alt="Parks &amp; Recreation Field Guide" title="Parks &amp; Recreation Field Guide">
+                           <div class="clearfix">
+                              <div class="text">
+                                 <header>
+                                    <h4>Parks & Recreation Field Guide</h4>
+                                 </header>
+                                 <p>The Field Guide delivers suppliers, vendors and service providers to park and recreation agencies throughout the United States and Canada.</p>
+                              </div>
                            </div>
+                           <p>
+                              <a href="https://nrpa.officialbuyersguide.net/" class="btn" title="Learn More">
+                              Learn More
+                              </a>
+                           </p>
                         </div>
-                        <p>
-                           <a href="https://nrpa.officialbuyersguide.net/" class="btn" title="Learn More">
-                           Learn More
-                           </a>
-                        </p>
                      </section>
                      <section class="sitewide-footer-section social-media">
                         <header>
                            <h4>Connect With Us</h4>
                         </header>
                         <div class="social-grid clearfix">
-                           <a href="https://www.facebook.com/NationalRecreationandParkAssociation" target="_blank" class="icon-facebook" title="NRPA Facebook"></a>
-                           <a href="https://twitter.com/nrpa_news" target="_blank" class="icon-twitter" title="NRPA Twitter"></a>
-                           <a href="https://www.youtube.com/user/NRPA1" target="_blank" class="icon-youtube" title="NRPA YouTube"></a>
-                           <a href="https://www.linkedin.com/company/national-recreation-and-park-association" target="_blank" class="icon-linked-in" title="NRPA LinkedIn"></a>
-                           <a href="https://www.instagram.com/nrpa/" target="_blank" class="icon-instagram" title="NRPA Instagram"></a>
-                           <a href="https://www.pinterest.com/nrpa/" target="_blank" class="icon-pinterest" title="NRPA Pinterest"></a>
+                           <a href="https://www.facebook.com/NationalRecreationandParkAssociation" target="_blank" class="" title="NRPA Facebook"><img src="./assets/facebook-icon.svg" alt=""></a>
+                           <a href="https://twitter.com/nrpa_news" target="_blank" class="" title="NRPA Twitter"><img src="./assets/twitter-icon.svg" alt=""></a>
+                        </div>
+                        <div class="social-grid clearfix">
+                           <a href="https://www.youtube.com/user/NRPA1" target="_blank" class="" title="NRPA YouTube"><img src="./assets/youtuble-icon.svg" alt=""></a>
+                           <a href="https://www.linkedin.com/company/national-recreation-and-park-association" target="_blank" class="" title="NRPA LinkedIn"><img src="./assets/linkedin-icon.svg" alt=""></a>
+                        </div>
+                        <div class="social-grid clearfix">
+                           <a href="https://www.instagram.com/nrpa/" target="_blank" class="" title="NRPA Instagram"><img src="./assets/instagram-icon.svg" alt=""></a>
+                           <a href="https://www.pinterest.com/nrpa/" target="_blank" class="" title="NRPA Pinterest"><img src="./assets/pinterest-icon.svg" alt=""></a>
                         </div>
                      </section>
                   </div>
