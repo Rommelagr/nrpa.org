@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+   <![endif]-->
+   <!--[if IE 7]>         
+   <html class="no-js lt-ie9 lt-ie8">
+      <![endif]-->
+      <!--[if IE 8]>         
+      <html class="no-js lt-ie9">
+         <![endif]-->
+         <!--[if gt IE 8]><!-->
+         <html class="no-js" lang="en">
+            <!--<![endif]-->
+            <head>
+               <meta charset="utf-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+               <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-451e380bd6f44241099","applicationID":"1456875044","transactionName":"YlcANhFXVxJUBk0LXVsdLzQgGWoVVBdNMlNSVyENDUJLDlkJXBAdXFwGBxs=","queueTime":0,"applicationTime":2320,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1456876172",accountID:"3226640",trustKey:"3226640",xpid:"VwQFV1BXCBABUFRUDwYCVlAF",licenseKey:"NRJS-451e380bd6f44241099",applicationID:"1456875044"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(29),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(30),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){L++,C=g.hash,this[u]=y.now()}function o(){L--,g.hash!==C&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),S=t(7),N=t(14),M=t(9),P=t("ee"),T=P.get("tracer");t(16),y.features.spa=!0;var C,L=0;P.on(u,r),b.on(p,r),M.on(p,r),P.on(d,o),b.on(l,o),M.on(l,o),P.buffer([u,d,"xhr-done","xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),N.buffer([u,"new-xhr","send-xhr"+s]),S.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),T.buffer([u,"no-"+u]),M.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(N,"send-xhr"+s),a(P,"xhr-resolved"),a(P,"xhr-done"),a(S,m+s),a(S,m+"-done"),a(M,"new-jsonp"),a(M,"jsonp-end"),a(M,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");if(!y.disabled){y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(30),a=t(29);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t("wrap-function")(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,l,"dom-"):(f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-")),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(29),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(26),h=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function o(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(17),f=t(15).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(22),m=t(21),v=t(18),w=NREUM.o.REQ,g=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof g&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;"string"==typeof i?n=i:"object"==typeof i&&i instanceof w?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n);var s=(""+(i&&i instanceof w&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}),u.on("fetch-done",function(t,e){this.params||(this.params={}),this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime])})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(21);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(29),s=t(30),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],20:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],21:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],22:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],23:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(31);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],24:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!v){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),v=!0,d("timing",["fi",e,n])}}function s(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,f,u,d=t("handle"),p=t("loader"),l=t(28),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(o);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(i);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,!1)})}l(s)}},{}],26:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],27:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],28:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[o]?"hidden":"visible")}"addEventListener"in document&&i&&document.addEventListener(i,e,!1)}e.exports=r;var o,i,a;"undefined"!=typeof document.hidden?(o="hidden",i="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",i="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",i="webkitvisibilitychange",a="webkitVisibilityState")},{}],29:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],30:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],31:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(29),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!S++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(23),s=t("handle"),c=t(29),f=t("ee"),u=t(27),d=t(24),p=t(20),l=p.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!d(h.location);NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1210.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(19),t(25),m[v]?(m[v]("DOMContentLoaded",i,!1),h[v]("load",r,!1)):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var S=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(30),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,16,5,3,4]);</script>
+               <title>Parks and Recreation, Park and Rec | National Recreation and Park Association</title>
+               <meta name="description" content="The National Recreation and Park Association (NRPA) mission is to advance parks, recreation, and environmental conservation efforts that enhance the quality of life for all people." />
+               <meta name="keywords" content="Parks,environmental conservation efforts,public parks,social equity,public spaces,urban parks,park advocacy group,National Recreation and Park Association,NRPA," />
+               <meta property="og:title" content="Parks and Recreation, Park and Rec | National Recreation and Park Association" />
+               <meta property="og:description" content="The National Recreation and Park Association (NRPA) mission is to advance parks, recreation, and environmental conservation efforts that enhance the quality of life for all people." />
+               <meta property="og:image" content="https://res.cloudinary.com/nrpadev/image/upload/f_auto,q_70/NRPA-logo-teaser.jpg" />
+               <meta property="og:url" content="https://www.nrpa.org/" />
+               <meta property="og:type" content="website" />
+               <meta name="viewport" content="width=device-width, initial-scale=1">
+               <link rel='shortcut icon' href='https://www.nrpa.org/Static/favicon.ico' type='image/x-icon' />
+               <link href='https://fonts.googleapis.com/css?family=Cabin:400italic,700,400' rel='stylesheet' type='text/css'>
+               <link rel="stylesheet" href="./Static/css/style.css">
+               <link rel="stylesheet" href="https://www.nrpa.org/Static/css/icons.fallback.css">
+               <script src="https://www.nrpa.org/Static/js/vendor/modernizr-2.7.2.min.js"></script>
+               <script src="//code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+               <script>
+                  /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+                  (function (e) { function t(t, n, r, o) { "use strict"; function a() { for (var e, n = 0; u.length > n; n++) u[n].href && u[n].href.indexOf(t) > -1 && (e = !0); e ? i.media = r || "all" : setTimeout(a) } var i = e.document.createElement("link"), l = n || e.document.getElementsByTagName("script")[0], u = e.document.styleSheets; return i.rel = "stylesheet", i.href = t, i.media = "only x", i.onload = o || null, l.parentNode.insertBefore(i, l), a(), i } var n = function (r, o) { "use strict"; if (r && 3 === r.length) { var a = e.navigator, i = e.Image, l = !(!document.createElementNS || !document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || e.opera && -1 === a.userAgent.indexOf("Chrome") || -1 !== a.userAgent.indexOf("Series40")), u = new i; u.onerror = function () { n.method = "png", n.href = r[2], t(r[2]) }, u.onload = function () { var e = 1 === u.width && 1 === u.height, a = r[e && l ? 0 : e ? 1 : 2]; n.method = e && l ? "svg" : e ? "datapng" : "png", n.href = a, t(a, null, null, o) }, u.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==", document.documentElement.className += " grunticon" } }; n.loadCSS = t, e.grunticon = n })(this); (function (e, t) { "use strict"; var n = t.document, r = "grunticon:", o = function (e) { if (n.attachEvent ? "complete" === n.readyState : "loading" !== n.readyState) e(); else { var t = !1; n.addEventListener("readystatechange", function () { t || (t = !0, e()) }, !1) } }, a = function (e) { return t.document.querySelector('link[href$="' + e + '"]') }, c = function (e) { var t, n, o, a, c, i, u = {}; if (t = e.sheet, !t) return u; n = t.cssRules ? t.cssRules : t.rules; for (var l = 0; n.length > l; l++) o = n[l].cssText, a = r + n[l].selectorText, c = o.split(");")[0].match(/US\-ASCII\,([^"']+)/), c && c[1] && (i = decodeURIComponent(c[1]), u[a] = i); return u }, i = function (e) { var t, o, a; o = "data-grunticon-embed"; for (var c in e) if (a = c.slice(r.length), t = n.querySelectorAll(a + "[" + o + "]"), t.length) for (var i = 0; t.length > i; i++) t[i].innerHTML = e[c], t[i].style.backgroundImage = "none", t[i].removeAttribute(o); return t }, u = function (t) { "svg" === e.method && o(function () { i(c(a(e.href))), "function" == typeof t && t() }) }; e.embedIcons = i, e.getCSS = a, e.getIcons = c, e.ready = o, e.svgLoadedCallback = u, e.embedSVG = u })(grunticon, this);
+                  
+                  grunticon(["https://www.nrpa.org/Static/css/icons.data.svg.css", "https://www.nrpa.org/Static/css/icons.data.png.css", "https://www.nrpa.org/Static/css/icons.fallback.css"]);
+               </script>
+               <noscript>
+                  <link href="https://www.nrpa.org/Static/css/icons.fallback.css" rel="stylesheet">
+               </noscript>
+               <link href="/" rel="canonical" />
+               <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','GTM-WSSSTTT');
+               </script>
+               <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+               <script>
+                  window.addEventListener("load", function(){
+                  window.cookieconsent.initialise({
+                    "palette": {
+                      "popup": {
+                        "background": "#000"
+                      },
+                      "button": {
+                        "background": "#7FBC05",
+                        "text": "#ffffff"
+                      }
+                    },
+                    "content": {
+                      "message": "This website uses cookies to understand how you use our site and to improve your experience. By continuing to use our site, you accept our use of cookies.",
+                      "dismiss": "I accept",
+                      "href": "https://www.nrpa.org/About-National-Recreation-and-Park-Association/the-fine-print/"
+                    }
+                  })});
+               </script>
+               <script>
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                  
+                  ga('create', 'UA-9668118-1', 'auto');
+                  ga('send', 'pageview');
+                  
+               </script>
+               <script>
+                  var captureOutboundLink = function(url) {
+                     ga('send', 'event', 'outbound', 'click', url, {
+                       'transport': 'beacon',
+                       'hitCallback': function(){document.location = url;}
+                     });
+                  }
+               </script>
+               <script async src="https://www.googletagmanager.com/gtag/js?id=AW-954262109"></script>
+               <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  
+                  gtag('config', 'AW-954262109');
+               </script>
+               <script type="text/javascript" src="https://tracking.magnetmail.net/MagnetLeads.js"></script><script type="text/javascript"><!--
+                  com.realmagnet.MagnetLeads.init('f48K3FQxPE6RkgY6jEz8nw'); com.realmagnet.MagnetLeads.visitPage();
+                  //-->
+               </script>
+               <script>
+                  !function(f,b,e,v,n,t,s)
+                  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                  t.src=v;s=b.getElementsByTagName(e)[0];
+                  s.parentNode.insertBefore(t,s)}(window,
+                  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                  
+                  fbq('init', '884408335003926');
+                  fbq('track', "PageView");
+               </script>
+               <noscript>
+                  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=884408335003926&ev=PageView&noscript=1" />
+               </noscript>
+               <script type="text/javascript">
+                  var rnd = window.rnd || Math.floor(Math.random()*10e6);
+                  var pid485817 = window.pid485817 || rnd;
+                  var plc485817 = window.plc485817 || 0;
+                  var abkw = window.abkw || '';
+                  var absrc = 'https://servedbyadbutler.com/adserve/;ID=181623;size=0x0;setID=485817;type=js;sw='+screen.width+';sh='+screen.height+';spr='+window.devicePixelRatio+';kw='+abkw+';pid='+pid485817+';place='+(plc485817++)+';rnd='+rnd+';click=CLICK_MACRO_PLACEHOLDER';
+                  document.write('<scr'+'ipt src="'+absrc+'" type="text/javascript"></scr'+'ipt>');
+               </script>
+               <script>
+                  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+                  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+                  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+                  // Insert Twitter Pixel ID and Standard Event data below
+                  twq('init','o1s8i');
+                  twq('track','PageView');
+               </script>
+               <script type="text/javascript"> _linkedin_partner_id = "1171433"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script><script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> 
+               <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=1171433&fmt=gif" /> </noscript>
+               <script src="https://rum-static.pingdom.net/pa-60c0e334541c6000110001a9.js" async></script>
+               <script>
+                  (function(h,o,t,j,a,r){
+                      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                      h._hjSettings={hjid:867581,hjsv:6};
+                      a=o.getElementsByTagName('head')[0];
+                      r=o.createElement('script');r.async=1;
+                      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                      a.appendChild(r);
+                  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+               </script>
+            </head>
+            <body>
+               <div id="fb-root"></div>
+               <script>
+                  (function (d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=154730381210862";
+                      fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));
+               </script>
+               <header class="l-header" role="banner">
+                  <section id="top-green-bar" class="calls-to-action clearfix">
+                     <div id="top-green-bar-wrapper" class="wrapper">
+                        <ul id="top-green-bar-items" class="ul-list-inline link-list">
+                           <li role="nav" class="topic-nav">
+                              <a href="#" id="find-by-topic" data-link="topic-nav-panel" class="js-dropdown-link"><div id="top-arrow-right"></div>Find by Topic</a>
+                              <ul class="js-dropdown-panel dropdown-panel topic-nav-panel" id="topic-nav-panel">
+                                 <li> <a href="https://www.nrpa.org/search?query=Accreditation">Accreditation</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=ADA">ADA</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Advocacy">Advocacy</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=AFO">AFO</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Annual Conference">Annual Conference</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Awards">Awards</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Blog">Blog</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=CAPRA">CAPRA</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Certification">Certification</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=CEU">CEU</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=COAPRT">COAPRT</a></li>
+                                 <li>
+                                    <div class="topic-nav-button">+More</div>
+                                 </li>
+                                 <li> <a href="https://www.nrpa.org/search?query=CPRP">CPRP</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=CPSI">CPSI</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Gold Medal">Gold Medal</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Grants">Grants</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Jobs">Jobs</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Leadership">Leadership</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Parks and Recreation Magazine">Parks and Recreation Magazine</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Parks and Recreation Month">Parks and Recreation Month</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Playgrounds">Playgrounds</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Scholarships">Scholarships</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Schools">Schools</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=State Affiliates">State Affiliates</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Trends">Trends</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Urban Parks and Recreation">Urban Parks and Recreation</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Volunteers">Volunteers</a></li>
+                                 <li> <a href="https://www.nrpa.org/search?query=Webinars">Webinars</a></li>
+                              </ul>
+                           </li>
+                           <li>
+                              <a href="http://www.nrpa.org/EpiserverSSO/SSO.aspx?RetUrl=https://www.nrpa.org/">Login</a>
+                           </li>
+                           <li><a href="http://forms.nrpa.org/profile">Profile</a></li>
+                           <li><a href="http://www.nrpa.org/membership">Join</a></li>
+                           <li id="donate-button" class="callout callout--donate"><a href="https://www.nrpa.org/our-work/donate">Donate!<span class="hidden">/Renew</span></a></li>
+                        </ul>
+                        <div class="js-dropdown-panel dropdown-panel login-panel" id="login-panel">
+                           <h2>this is the login panel</h2>
+                        </div>
+                     </div>
+                  </section>
+                  <div class="header-module">
+                     <section class="logo">
+                        <a href="/">
+                        <img src="https://www.nrpa.org/contentassets/603fba2515ce4ee09a40ffefb6455017/nrpa-color-logo-tagline-new.svg" alt="National Recreation and Park Association (NRPA)" title="National Recreation and Park Association (NRPA)" />
+                        </a>
+                        <div class="visuallyhidden">
+                           <h1>The National Recreation and Parks Association</h1>
+                        </div>
+                     </section>
+                     <div class="nav-search-container">
+                        <a href="#" class="mobile-nav-link js-nav-btn"><span class="burger">☰</span><span class="text">MENU</span></a>
+                        <div id="utility-nav" class="utility-nav">
+                           <ul>
+                              <li><a href="https://www.nrpa.org/about-national-recreation-and-park-association/" title="About NRPA">About</a></li>
+                              <li><a href="https://www.nrpa.org/membership/" title="Membership">Membership</a></li>
+                              <li><a href="https://connect.nrpa.org/home" title="Connect">Connect</a></li>
+                              <li><a href="https://apps.nrpa.org/store" title="Store">Store</a></li>
+                              <li><a href="https://www.nrpa.org/blog/" title="Blog">Blog</a></li>
+                              <li><a href="https://www.nrpa.org/about-national-recreation-and-park-association/contact-nrpa/" title="Contact">Contact</a></li>
+                           </ul>
+                        </div>
+                        <div class="welcomeMessage right"></div>
+                        <div id="search-bar" class="form-search header right">
+                           <input type="search" class="search-field" placeholder="search" onkeypress="return onPushEnterButton(event)">
+                           <input type="submit" id="search-arrow-right" class="submit-btn" value="">
+                     </div>
+                  </div>
+               </header>
+               <nav id="main-nav" class="main-nav root-nav">
+                  <div class="main-nav-wrapper">
+                     <ul>
+                        <li>
+                           <a href="https://www.nrpa.org/our-work/" title="Our Work">Our Work</a>
+                           <div class="megamenu-panel position-absolute">
+                              <div class="flexbox-container">
+                                 <div class="megamenu-subnav-links">
+                                    <ul class="megamenu-link-col">
+                                       <li><a href="https://www.nrpa.org/our-work/Grant-Fundraising-Resources/" title="Grant and Fundraising Resources">Grant and Fundraising Resources</a></li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/our-work/Three-Pillars/" title="Our Three Pillars">Our Three Pillars</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/our-work/Three-Pillars/health-wellness/" title="Health and Wellness">Health and Wellness</a>
+                                             <li><a href="https://www.nrpa.org/our-work/Three-Pillars/equity/" title="Equity">Equity</a>
+                                             <li><a href="https://www.nrpa.org/our-work/Three-Pillars/conservation/" title="Conservation">Conservation</a>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/our-work/advocacy/" title="Advocacy">Advocacy</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/our-work/advocacy/legislative-platform/" title="Legislative Platform">Legislative Platform</a>
+                                             <li><a href="https://www.nrpa.org/our-work/advocacy/the-land-and-water-conservation-fund-lwcf/" title="The Land and Water Conservation Fund (LWCF)">The Land and Water Conservation Fund (LWCF)</a>
+                                             <li><a href="https://www.nrpa.org/our-work/advocacy/advocacy-engage/" title="Take Action">Take Action</a>
+                                             <li><a href="https://www.nrpa.org/our-work/advocacy/Park-Champions/" title="Park Champion™ Initiative">Park Champion™ Initiative</a>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://www.nrpa.org/our-work/awards/" title="NRPA Awards">NRPA Awards</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/our-work/awards/goldmedal/" title="National Gold Medal Award">National Gold Medal Award</a>
+                                             <li><a href="https://www.nrpa.org/our-work/awards/innovation-awards/" title="Innovation Awards">Innovation Awards</a>
+                                             <li><a href="https://www.nrpa.org/our-work/awards/spotlight-awards/" title="Spotlight Awards">Spotlight Awards</a>
+                                             <li><a href="https://www.nrpa.org/our-work/awards/scholarships-and-fellowships/" title="Scholarships and Fellowships">Scholarships and Fellowships</a>
+                                             <li><a href="https://www.nrpa.org/our-work/awards/halloffame/" title="Robert W Crawford Hall of Fame">Robert W Crawford Hall of Fame</a>
+                                             <li><a href="https://www.nrpa.org/our-work/awards/about-nrpas-awards/" title="About NRPA's Awards">About NRPA's Awards</a>
+                                             <li><a href="https://www.nrpa.org/our-work/awards/30-under-30/" title="30 Under 30">30 Under 30</a>
+                                          </ul>
+                                       </li>
+                                       <li><a href="https://www.nrpa.org/our-work/parksbuildcommunity/" title="Parks Build Community">Parks Build Community</a></li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://www.nrpa.org/our-work/partnerships/" title="NRPA Partnerships">NRPA Partnerships</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/our-work/partnerships/initiatives/" title="Initiatives">Initiatives</a>
+                                             <li><a href="https://www.nrpa.org/our-work/partnerships/partner-with-us/" title="How to Partner">How to Partner</a>
+                                          </ul>
+                                       </li>
+                                       <li><a href="https://www.nrpa.org/our-work/aquatics/" title="Aquatics">Aquatics</a></li>
+                                       <li><a href="https://www.nrpa.org/our-work/playground-safety/" title="Playgrounds">Playgrounds</a></li>
+                                       <li><a href="https://www.nrpa.org/our-work/urban-parks/" title="Urban Parks">Urban Parks</a></li>
+                                       <li><a href="https://www.nrpa.org/our-work/success--stories/" title="Success Stories">Success Stories</a></li>
+                                       <li><a href="https://www.nrpa.org/our-work/volunteer-opportunities/" title="Volunteer with NRPA">Volunteer with NRPA</a></li>
+                                       <li><a href="https://www.nrpa.org/our-work/park-rec-kid/" title="I’m a Park and Rec Kid!">I’m a Park and Rec Kid!</a></li>
+                                       <li><a href="https://www.nrpa.org/our-work/building-a-movement/" title="Building a Movement">Building a Movement</a></li>
+                                    </ul>
+                                 </div>
+                                 <div class="megamenu-feature">
+                                    <p><img alt="" src="https://www.nrpa.org/link/d78a567c022b4c579eff63143d4ab6f9.aspx" height="198" width="290" /></p>
+                                    <p>Join NRPA this September and host a <a title="Parks for Pollinators BioBlitz" href="https://www.nrpa.org/link/575845c6a778409cb6c33da7a3fd3d3d.aspx">Parks for Pollinators BioBlitz</a> to engage your community in nature, learn about pollinators and collect valuable data to help manage your parks. By participating, you could win one of three $1,000 prizes or a Scotts Miracle-Gro gift pack.</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <a href="https://www.nrpa.org/careers-education/" title="Careers & Education">Careers & Education</a>
+                           <div class="megamenu-panel position-absolute">
+                              <div class="flexbox-container">
+                                 <div class="megamenu-subnav-links">
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://www.nrpa.org/careers-education/careers/" title="Jobs in Parks and Recreation">Jobs in Parks and Recreation</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/careers-education/careers/career-center/" title="Career Center">Career Center</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/careers/choosing-a-career-in-parks-and-recreation/" title="Choosing a Career in Parks and Recreation">Choosing a Career in Parks and Recreation</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/careers/peer-to-peer-career-advice/" title="Peer to Peer Career Advice">Peer to Peer Career Advice</a>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/careers-education/education/" title="Schools">Schools</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/careers-education/education/directors-school/" title="Directors School">Directors School</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/education/supervisors-management-school/" title="Supervisors' Management School">Supervisors' Management School</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/education/event-management-school/" title="Event Management School">Event Management School</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/education/park-and-recreation-maintenance-management-school/" title="Park and Recreation Maintenance Management School">Park and Recreation Maintenance Management School</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/education/sustainability-institute/" title="Sustainability Institute">Sustainability Institute</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/education/revenue-development-and-management-school/" title="Revenue Development and Management School">Revenue Development and Management School</a>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://learning.nrpa.org/" title="Online Learning">Online Learning</a>
+                                          <ul>
+                                             <li><a href="https://learning.nrpa.org/online-courses" title="Online Courses">Online Courses</a>
+                                             <li><a href="https://learning.nrpa.org/webinars" title="Webinars">Webinars</a>
+                                             <li><a href="https://learning.nrpa.org/2020-nrpa-virtual-on-demand" title="NRPA Virtual On Demand">NRPA Virtual On Demand</a>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/careers-education/certificate-programs/" title="Certificate Programs">Certificate Programs</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/careers-education/certificate-programs/playground-maintenance-course/" title="Playground Maintenance Course">Playground Maintenance Course</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/certificate-programs/leadership-development-program/" title="NRPA Leadership Certificate">NRPA Leadership Certificate</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/certificate-programs/marketing-communications-certificate/" title="NRPA Marketing and Communications Certificate">NRPA Marketing and Communications Certificate</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/certificate-programs/nrpa-aquatic-management-professional-certificate/" title="NRPA Aquatic Management Professional Certificate">NRPA Aquatic Management Professional Certificate</a>
+                                             <li><a href="https://www.nrpa.org/careers-education/certificate-programs/splash-pad-certificate/" title="NRPA Splash Pad Certificate">NRPA Splash Pad Certificate</a>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/careers-education/ceu/" title="Continuing Education Units (CEUs)">Continuing Education Units (CEUs)</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/careers-education/ceu/continuing-education-units-policy/" title="Continuing Education Units Policy">Continuing Education Units Policy</a>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li><a href="https://www.nrpa.org/careers-education/scholarships/" title="Scholarships and Fellowships">Scholarships and Fellowships</a></li>
+                                       <li><a href="https://www.nrpa.org/careers-education/nrpa-digital-badges/" title="NRPA Digital Badges">NRPA Digital Badges</a></li>
+                                    </ul>
+                                 </div>
+                                 <div class="megamenu-feature">
+                                    <p><a title="NRPA Directors School" href="https://www.nrpa.org/link/93325437323c4f1e8980df15f5cc0ce7.aspx"><img title="NRPA Directors School" alt="NRPA Directors School" src="https://www.nrpa.org/link/a3b1c11716c44a7c857d48144f9e81d9.aspx" height="198" width="290" /></a></p>
+                                    <p>The <strong><a title="NRPA Directors School" href="https://www.nrpa.org/link/93325437323c4f1e8980df15f5cc0ce7.aspx">NRPA Directors School</a></strong> is an exclusive two-year professional development opportunity that prepares new and potential park and recreation directors to be effective leaders. </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <a href="https://www.nrpa.org/certification/" title="Certification">Certification</a>
+                           <div class="megamenu-panel position-absolute">
+                              <div class="flexbox-container">
+                                 <div class="megamenu-subnav-links">
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://www.nrpa.org/certification/CPRP/" title="Certified Park and Recreation Professional (CPRP) Certification">Certified Park and Recreation Professional (CPRP) Certification</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/certification/CPRP/become-a-cprp/" title="Become a CPRP">Become a CPRP</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPRP/cprp-renewal/" title="Renew Your CPRP Certification">Renew Your CPRP Certification</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPRP/the-cprp-exam/" title="CPRP Exam">CPRP Exam</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPRP/cprp-resources/" title="CPRP Prep Materials and Resources">CPRP Prep Materials and Resources</a>
+                                             <li><a href="http://www.nrpa.org/cprp_registry/default.aspx" title="CPRP Registry" target="_blank">CPRP Registry</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPRP/cprp-frequently-asked-questions/" title="CPRP Frequently Asked Questions">CPRP Frequently Asked Questions</a>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/certification/CPSI/" title="Certified Playground Safety Inspector (CPSI) Certification">Certified Playground Safety Inspector (CPSI) Certification</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/certification/CPSI/become-a-cpsi/" title="Become a CPSI">Become a CPSI</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPSI/cpsi-course-calendar/" title="CPSI Course Calendar">CPSI Course Calendar</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPSI/cpsi-renewal/" title="Renew Your CPSI Certification">Renew Your CPSI Certification</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPSI/become-a-cpsi-instructor/" title="Become a CPSI Instructor">Become a CPSI Instructor</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPSI/host-a-cpsi-course/" title="Host a CPSI Course">Host a CPSI Course</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPSI/resources-and-links/" title="CPSI Prep Materials and Resources">CPSI Prep Materials and Resources</a>
+                                             <li><a href="https://www.nrpa.org/certification/CPSI/cpsi-online-registry/" title="CPSI Registry">CPSI Registry</a>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://www.nrpa.org/certification/cpre/" title="Certified Park and Recreation Executive (CPRE) Certification">Certified Park and Recreation Executive (CPRE) Certification</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/certification/cpre/become-a-cpre/" title="Become a CPRE">Become a CPRE</a>
+                                             <li><a href="https://www.nrpa.org/certification/cpre/cpre-renewal/" title="Renew Your CPRE Certification">Renew Your CPRE Certification</a>
+                                             <li><a href="https://www.nrpa.org/certification/cpre/cpre-examination/" title="CPRE Exam">CPRE Exam</a>
+                                             <li><a href="https://www.nrpa.org/certification/cpre/cpre-resources/" title="CPRE Prep Materials and Resources">CPRE Prep Materials and Resources</a>
+                                             <li><a href="http://www.nrpa.org/cpre_registry/default.aspx" title="CPRE Registry" target="_blank">CPRE Registry</a>
+                                             <li><a href="https://www.nrpa.org/certification/cpre/cpre-faq/" title="CPRE Frequently Asked Questions">CPRE Frequently Asked Questions</a>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/certification/AFO/" title="Aquatic Facility Operator (AFO) Certification">Aquatic Facility Operator (AFO) Certification</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/certification/AFO/become-an-afo/" title="Become an AFO">Become an AFO</a>
+                                             <li><a href="https://www.nrpa.org/certification/AFO/afo-course-schedule/" title="AFO Course Calendar">AFO Course Calendar</a>
+                                             <li><a href="https://www.nrpa.org/certification/AFO/afo-renewal/" title="Renew Your AFO Certification">Renew Your AFO Certification</a>
+                                             <li><a href="https://www.nrpa.org/certification/AFO/become-an-afo-instructor/" title="Become an AFO Instructor">Become an AFO Instructor</a>
+                                             <li><a href="https://www.nrpa.org/certification/AFO/AFO-Course-Hosting/" title="Host an AFO Course">Host an AFO Course</a>
+                                             <li><a href="https://www.nrpa.org/certification/AFO/aquatic-standards-and-resources/" title="AFO Prep Materials and Resources">AFO Prep Materials and Resources</a>
+                                             <li><a href="http://www.nrpa.org/afo_registry/default.aspx" title="AFO Directory" target="_blank">AFO Directory</a>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li><a href="https://www.nrpa.org/certification/CAPRA-LP/" title="CAPRA Agency Accreditation">CAPRA Agency Accreditation</a></li>
+                                       <li><a href="https://www.nrpa.org/certification/nrpa-digital-badges/" title="NRPA Digital Badges">NRPA Digital Badges</a></li>
+                                    </ul>
+                                 </div>
+                                 <div class="megamenu-feature">
+                                    <p><a title="Become a CPRP" href="https://www.nrpa.org/link/4911484f5ab64ab99c92dd182d06176d.aspx"><img title="Impact Your Career, Impact Your Community." alt="Become a CPRP Banner Ad" src="https://www.nrpa.org/link/628a012bf3fe496a9627c770fec9a77b.aspx" height="198" width="290" /></a></p>
+                                    <p>Becoming a <strong><a title="Become a CPRP" href="https://www.nrpa.org/link/4911484f5ab64ab99c92dd182d06176d.aspx">Certified Park and Recreation Professional (CPRP)</a></strong>&nbsp;will not only keep your expertise fresh, but also help you achieve greater health, resilience and equity outcomes in your community. <strong><a title="Become a CPRP" href="https://www.nrpa.org/link/4911484f5ab64ab99c92dd182d06176d.aspx"><br /></a></strong></p>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <a href="https://www.nrpa.org/events/" title="Conference & Events">Conference & Events</a>
+                           <div class="megamenu-panel position-absolute">
+                              <div class="flexbox-container">
+                                 <div class="megamenu-subnav-links">
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://www.nrpa.org/conference/" title="NRPA Annual Conference">NRPA Annual Conference</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/events/nrpa-annual-conference/exhibit/" title="Exhibit at the Conference" target="_blank">Exhibit at the Conference</a>
+                                             <li><a href="https://www.nrpa.org/events/nrpa-annual-conference/register-now-for-the-2021-nrpa-annual-conference/" title="Register Now for the 2021 NRPA Annual Conference">Register Now for the 2021 NRPA Annual Conference</a>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li><a href="https://www.nrpa.org/events/industry-calendar/" title="Industry Calendar">Industry Calendar</a></li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/events/july/" title="Park and Recreation Month">Park and Recreation Month</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/events/july/how-to-tell-ourparkandrecstory-storytelling-through-video/" title="How to Tell #OurParkAndRecStory: Storytelling Through Video">How to Tell #OurParkAndRecStory: Storytelling Through Video</a>
+                                             <li><a href="https://www.nrpa.org/events/july/park-and-recreation-month-our-community-poem/" title="Park and Recreation Month: Our Community Poem">Park and Recreation Month: Our Community Poem</a>
+                                             <li><a href="https://www.nrpa.org/events/july/win-a-pair-of-shoes-from-merrell/" title="Win a Pair of Shoes from Merrell">Win a Pair of Shoes from Merrell</a>
+                                          </ul>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.nrpa.org/events/innovation-labs/" title="NRPA Innovation Labs">NRPA Innovation Labs</a>
+                                          <ul>
+                                             <li><a href="https://www.nrpa.org/events/innovation-labs/innovation-labs-sponsorship-opportunities/" title="NRPA Innovation Labs: Sponsorship Opportunities">NRPA Innovation Labs: Sponsorship Opportunities</a>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li><a href="https://www.nrpa.org/events/family-fitness-day/" title="Family Health & Fitness Day">Family Health & Fitness Day</a></li>
+                                    </ul>
+                                 </div>
+                                 <div class="megamenu-feature">
+                                    <p>&nbsp;<a title="2021 NRPA Annual Conference Registration" href="https://www.nrpa.org/link/3aec7be37a344d6eb3c03b38ae1dc40a.aspx"><img alt="" src="https://www.nrpa.org/link/574b8f4eb63e4e5d8f2e9abaf5a99a32.aspx" height="198" width="290" /></a></p>
+                                    <p>The 2021 NRPA Annual Conference, offering both in-person and virtual options, will take place September 21-23. Register by August 6 to take advantage of early bird pricing! <a title="2021 NRPA Annual Conference Registration" href="https://www.nrpa.org/link/3aec7be37a344d6eb3c03b38ae1dc40a.aspx"><strong>Register now</strong></a>.</p>
+                                    <p>&nbsp;</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <a href="https://www.nrpa.org/publications-research/" title="Publications & Research">Publications & Research</a>
+                           <div class="megamenu-panel position-absolute">
+                              <div class="flexbox-container">
+                                 <div class="megamenu-subnav-links">
+                                    <ul class="megamenu-link-col">
+                                       <li>
+                                          <a href="https://www.nrpa.org/publications-research/parks--recreation-magazine/" title="Parks & Recreation Magazine">Parks & Recreation Magazine</a>
+                                          <ul>
+                                             <li><a href="https://ezine.nrpa.org/" title="Ezine Edition" target="_blank">Ezine Edition</a>
+                                             <li><a href="https://www.nrpa.org/publications-research/parks--recreation-magazine/advertising/" title="Advertising">Advertising</a>
+                                          </ul>
+                                       </li>
+                                       <li><a href="https://nrpa.officialbuyersguide.net/" title="Parks & Recreation Online Field Guide" target="_blank">Parks & Recreation Online Field Guide</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/blog/" title="Open Space Blog & Podcast">Open Space Blog & Podcast</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/research-papers/" title="NRPA Research Reports">NRPA Research Reports</a></li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li><a href="https://www.nrpa.org/publications-research/ParkMetrics/" title="NRPA Park Metrics">NRPA Park Metrics</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/park-pulse/" title="NRPA Park Pulse Surveys">NRPA Park Pulse Surveys</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/parks-snapshot-surveys/" title="NRPA Parks Snapshot Surveys">NRPA Parks Snapshot Surveys</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/nrpa-journals/" title="Journals">Journals</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/FMR/" title="NRPA Facility Market Reports">NRPA Facility Market Reports</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/evaluation-resource-hub/" title="Evaluation Resource Hub">Evaluation Resource Hub</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/best-practice-resources/" title="Best Practice Resources">Best Practice Resources</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/mapping-and-data-resources/" title="Mapping and Data Resources">Mapping and Data Resources</a></li>
+                                    </ul>
+                                    <ul class="megamenu-link-col">
+                                       <li><a href="https://www.nrpa.org/publications-research/press--room/" title="Press Room">Press Room</a></li>
+                                       <li><a href="https://www.nrpa.org/publications-research/email-newsletters/" title="Email Newsletters">Email Newsletters</a></li>
+                                    </ul>
+                                 </div>
+                                 <div class="megamenu-feature">
+                                    <p><img alt="" src="https://www.nrpa.org/link/97b6092240ae4d089c8fb3cadd699ee9.aspx" height="198" width="290" /></p>
+                                    <p>The <a title="2021 NRPA Agency Performance Review" href="https://www.nrpa.org/link/8b4250635fa4461995a38613fdc5b189.aspx"><em><strong>2021 NRPA Agency Performance Review</strong></em></a> is the most comprehensive resource of data and insights for park and recreation agencies in the United States. The report highlighths 25 of the most critical park and recreation metrics collected from the NRPA Park Metrics database.</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+               <section class="slider-container">
+                  <div id="main-slider" class="main-slider">
+                     <div>
+                        <div class="block sliderpage">
+                           <picture>
+                              <!--[if IE 9]>
+                              <video style="display: none;">
+                                 <![endif]-->
+                                 <source media="(min-width: 1400px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,q_70/Health-Wellness-1500x535-2020-APR.jpg">
+                                 <source media="(min-width: 1200px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider1200/Health-Wellness-1500x535-2020-APR.jpg">
+                                 <source media="(min-width: 1000px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_sliderMinWidth1000/Health-Wellness-1500x535-2020-APR.jpg">
+                                 <source media="(min-width: 800px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider800/Health-Wellness-1500x535-2020-APR.jpg">
+                                 <source media="(min-width: 600px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider600/Health-Wellness-1500x535-2020-APR.jpg">
+                                 <source media="(min-width: 500px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_slider500px/Health-Wellness-1500x535-2020-APR.jpg">
+                                 <!--[if IE 9]>
+                              </video>
+                              <![endif]--><img class="defautl-slide" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSliderDefault/Health-Wellness-1500x535-2020-APR.jpg" alt="Health Wellness" title="Health Wellness" />
+                           </picture>
+                           <div class="slick-text clearfix">
+                              <h2><a href="https://www.nrpa.org/link/5f8c750d669b4b1f871074ac67344c98.aspx">Leading the nation to improved health and wellness through parks and recreation.</a></h2>
+                              <a href="https://www.nrpa.org/link/5f8c750d669b4b1f871074ac67344c98.aspx" class="btn">Learn More</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div>
+                        <div class="block sliderpage">
+                           <picture>
+                              <!--[if IE 9]>
+                              <video style="display: none;">
+                                 <![endif]-->
+                                 <source media="(min-width: 1400px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,q_70/Equity-1500x535-2021-APR.jpg">
+                                 <source media="(min-width: 1200px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider1200/Equity-1500x535-2021-APR.jpg">
+                                 <source media="(min-width: 1000px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_sliderMinWidth1000/Equity-1500x535-2021-APR.jpg">
+                                 <source media="(min-width: 800px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider800/Equity-1500x535-2021-APR.jpg">
+                                 <source media="(min-width: 600px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider600/Equity-1500x535-2021-APR.jpg">
+                                 <source media="(min-width: 500px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_slider500px/Equity-1500x535-2021-APR.jpg">
+                                 <!--[if IE 9]>
+                              </video>
+                              <![endif]--><img class="defautl-slide" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSliderDefault/Equity-1500x535-2021-APR.jpg" alt="Equity" title="Equity" />
+                           </picture>
+                           <div class="slick-text clearfix">
+                              <h2><a href="https://www.nrpa.org/link/6e424631f6eb482184169136b4df5367.aspx">Ensuring all people have access to the benefits of local parks and recreation. </a></h2>
+                              <a href="https://www.nrpa.org/link/6e424631f6eb482184169136b4df5367.aspx" class="btn">Learn More</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div>
+                        <div class="block sliderpage">
+                           <picture>
+                              <!--[if IE 9]>
+                              <video style="display: none;">
+                                 <![endif]-->
+                                 <source media="(min-width: 1400px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,q_70/Conservation-1500x535-2018-JAN.jpg">
+                                 <source media="(min-width: 1200px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider1200/Conservation-1500x535-2018-JAN.jpg">
+                                 <source media="(min-width: 1000px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_sliderMinWidth1000/Conservation-1500x535-2018-JAN.jpg">
+                                 <source media="(min-width: 800px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider800/Conservation-1500x535-2018-JAN.jpg">
+                                 <source media="(min-width: 600px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider600/Conservation-1500x535-2018-JAN.jpg">
+                                 <source media="(min-width: 500px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_slider500px/Conservation-1500x535-2018-JAN.jpg">
+                                 <!--[if IE 9]>
+                              </video>
+                              <![endif]--><img class="defautl-slide" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSliderDefault/Conservation-1500x535-2018-JAN.jpg" alt="Conservation" title="Conservation" />
+                           </picture>
+                           <div class="slick-text clearfix">
+                              <h2><a href="https://www.nrpa.org/link/5f27bbde788b47ff92b631c88527e8ae.aspx">Protecting open space, connecting children to nature, and engaging communities in conservation practices.</a></h2>
+                              <a href="https://www.nrpa.org/link/5f27bbde788b47ff92b631c88527e8ae.aspx" class="btn">Learn More</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div>
+                        <div class="block sliderpage">
+                           <picture>
+                              <!--[if IE 9]>
+                              <video style="display: none;">
+                                 <![endif]-->
+                                 <source media="(min-width: 1400px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,q_70/2021-Park-and-Recreation-Month-Web-Slider-1500x535.jpg">
+                                 <source media="(min-width: 1200px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider1200/2021-Park-and-Recreation-Month-Web-Slider-1500x535.jpg">
+                                 <source media="(min-width: 1000px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_sliderMinWidth1000/2021-Park-and-Recreation-Month-Web-Slider-1500x535.jpg">
+                                 <source media="(min-width: 800px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider800/2021-Park-and-Recreation-Month-Web-Slider-1500x535.jpg">
+                                 <source media="(min-width: 600px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider600/2021-Park-and-Recreation-Month-Web-Slider-1500x535.jpg">
+                                 <source media="(min-width: 500px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_slider500px/2021-Park-and-Recreation-Month-Web-Slider-1500x535.jpg">
+                                 <!--[if IE 9]>
+                              </video>
+                              <![endif]--><img class="defautl-slide" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSliderDefault/2021-Park-and-Recreation-Month-Web-Slider-1500x535.jpg" alt="2021 Park and Recreation Month Web Slider" title="2021 Park and Recreation Month Web Slider" />
+                           </picture>
+                           <div class="slick-text clearfix">
+                              <h2><a href="https://www.nrpa.org/link/f19e69fe1b5d48a986325ce68f873173.aspx">Park and Recreation Month 2021: Our Park and Recreation Story</a></h2>
+                              <a href="https://www.nrpa.org/link/f19e69fe1b5d48a986325ce68f873173.aspx" class="btn">Share Your Story</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div>
+                        <div class="block sliderpage">
+                           <picture>
+                              <!--[if IE 9]>
+                              <video style="display: none;">
+                                 <![endif]-->
+                                 <source media="(min-width: 1400px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,q_70/coronavirus-disease-2019-1500x535-20200311.jpg">
+                                 <source media="(min-width: 1200px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider1200/coronavirus-disease-2019-1500x535-20200311.jpg">
+                                 <source media="(min-width: 1000px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_sliderMinWidth1000/coronavirus-disease-2019-1500x535-20200311.jpg">
+                                 <source media="(min-width: 800px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider800/coronavirus-disease-2019-1500x535-20200311.jpg">
+                                 <source media="(min-width: 600px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSlider600/coronavirus-disease-2019-1500x535-20200311.jpg">
+                                 <source media="(min-width: 500px)" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_slider500px/coronavirus-disease-2019-1500x535-20200311.jpg">
+                                 <!--[if IE 9]>
+                              </video>
+                              <![endif]--><img class="defautl-slide" srcset="https://res.cloudinary.com/nrpadev/image/upload/f_auto,t_conferenceSliderDefault/coronavirus-disease-2019-1500x535-20200311.jpg" alt="coronavirus disease 2019" title="coronavirus disease 2019" />
+                           </picture>
+                           <div class="slick-text clearfix">
+                              <h2><a href="https://www.nrpa.org/link/b7bba60cf1d549f485e8e435d2b1856e.aspx">Learn more about NRPA&#39;s response to coronavirus disease 2019 (COVID-19).</a></h2>
+                              <a href="https://www.nrpa.org/link/b7bba60cf1d549f485e8e435d2b1856e.aspx" class="btn">Learn More</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+               <section class="main" role="main">
+                  <section id="news-section" class="featured-items-section">
+                     <ul class="featured-items js-featured-items slider-off clearfix">
+                        <li class="item">
+                           <a href="https://www.nrpa.org/conference/registration/" title="Registration">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/Web-teaser-410x410.jpg" alt="Web teaser 410x410" title="Web teaser 410x410">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://www.nrpa.org/conference/registration/" title="Registration">
+                                 Register for the 2021 NRPA Annual Conference </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>Register now for the 2021 NRPA Annual Conference, September 21-23, offering both in-person and virtual options to meet any budget and travel preference! We are dedicated to the same high-quality educational programming NRPA is known for — because everyone deserves a great conference!</p>
+                              <p>
+                                 <a href="https://www.nrpa.org/conference/registration/" class="read-more" title="Register Now">Register Now</a>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="item">
+                           <a href="https://www.nrpa.org/our-work/Three-Pillars/equity/" title="Equity">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/Social-Equity-410x410.jpg" alt="Social Equity 410x410" title="Social Equity 410x410">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://www.nrpa.org/our-work/Three-Pillars/equity/" title="Equity">
+                                 Equity at the Center </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>At NRPA, equity is at the center of all we do. As we strive for a future where everyone has fair and just access to quality parks and recreation, NRPA has released a suite of new resources centered on equity: an equity statement, a story map, and an Equity Action Plan. </p>
+                              <p>
+                                 <a href="https://www.nrpa.org/our-work/Three-Pillars/equity/" class="read-more" title="Learn More">Learn More</a>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="item">
+                           <a href="https://www.nrpa.org/publications-research/park-pulse/summer-means-happy-memories/" title="Summer Means Happy Memories">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/2021-August-Park-Pulse-410x410.jpg" alt="2021 August Park Pulse 410x410" title="2021 August Park Pulse 410x410">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://www.nrpa.org/publications-research/park-pulse/summer-means-happy-memories/" title="Summer Means Happy Memories">
+                                 Summer Means Happy Memories </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>Nearly every adult in the United States (93 percent) looks back fondly at a summertime activity or tradition they created in parks and recreation. In this month’s Park Pulse survey, learn about the activities that spark the best summer memories.</p>
+                              <p>
+                                 <a href="https://www.nrpa.org/publications-research/park-pulse/summer-means-happy-memories/" class="read-more" title="Learn More">Learn More</a>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="item">
+                           <a href="https://learning.nrpa.org/products/the-ada-is-back-was-it-really-ever-gone" title="Premier Webinar: July 2021">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/Americans-with-Disabilities-Act-370x275.jpg" alt="Americans with Disabilities Act 370x275" title="Americans with Disabilities Act 370x275">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://learning.nrpa.org/products/the-ada-is-back-was-it-really-ever-gone" title="Premier Webinar: July 2021">
+                                 Premier Webinar: The ADA Is Back! Was It Really Ever Gone? </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>Join this premier webinar on August 12 to learn how the Americans with Disabilities Act (ADA) is enforced, identify enforcement trends to better get ahead of the curve, and to discuss the resources parks and recreation agencies need to keep compliant.</p>
+                              <p>
+                                 <a href="https://learning.nrpa.org/products/the-ada-is-back-was-it-really-ever-gone" class="read-more" title="Learn More">Learn More</a>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="item">
+                           <a href="https://www.nrpa.org/publications-research/research-papers/agency-performance-review/" title="NRPA Agency Performance Review">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/2021-APR-Featured-Image-410x410.jpg" alt="2021 APR Featured Image 410x410" title="2021 APR Featured Image 410x410">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://www.nrpa.org/publications-research/research-papers/agency-performance-review/" title="NRPA Agency Performance Review">
+                                 NRPA Agency Performance Review </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>The 2021 NRPA Agency Performance Review is the most comprehensive resource of data and insights for park and recreation agencies in the United States. The report highlights 25 of the most critical park and recreation metrics collected from the NRPA Park Metrics database. </p>
+                              <p>
+                                 <a href="https://www.nrpa.org/publications-research/research-papers/agency-performance-review/" class="read-more" title="Access the Report">Access the Report</a>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="item">
+                           <a href="https://www.nrpa.org/publications-research/parks-snapshot-surveys/" title="NRPA Parks Snapshot Surveys">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/Parks-Snapshot-blog-410.jpg" alt="Parks Snapshot blog 410" title="Parks Snapshot blog 410">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://www.nrpa.org/publications-research/parks-snapshot-surveys/" title="NRPA Parks Snapshot Surveys">
+                                 NRPA Parks Snapshot Surveys </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>In March 2020, NRPA began conducting weekly Parks Snapshot surveys to learn how park and recreation leaders from across the country are confronting the COVID-19 pandemic. We will continue to provide weekly data from the NRPA Parks Snapshot survey, as state and local guidance and ordinances regarding COVID-19 continue to change rapidly.</p>
+                              <p>
+                                 <a href="https://www.nrpa.org/publications-research/parks-snapshot-surveys/" class="read-more" title="Read more">Read more</a>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="item">
+                           <a href="https://www.nrpa.org/our-work/Three-Pillars/health-wellness/coronavirus-disease-2019/" title="NRPA Response to COVID-19">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/health-washing-hands-410b.jpg" alt="health washing hands 410b" title="health washing hands 410b">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://www.nrpa.org/our-work/Three-Pillars/health-wellness/coronavirus-disease-2019/" title="NRPA Response to COVID-19">
+                                 NRPA Response to COVID-19 </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>NRPA continues to monitor developments as well as federal, state and local responses to coronavirus disease 2019 (COVID-19). We are following the CDC employer response recommendations for our offices as well as NRPA-sponsored events.
+                                 This webpage will contain the most up-to-date information on our response and resources as we have them available.
+                              </p>
+                              <p>
+                                 <a href="https://www.nrpa.org/our-work/Three-Pillars/health-wellness/coronavirus-disease-2019/" class="read-more" title="Read more">Read more</a>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="item">
+                           <a href="https://www.nrpa.org/our-work/Grant-Fundraising-Resources/" title="Grant and Fundraising Resources">
+                           <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,g_auto:faces,h_275,q_70,w_370/parks-funding-grants-410.png" alt="parks funding grants 410" title="parks funding grants 410">
+                           </a>
+                           <header class="featured-item-title">
+                              <h3>
+                                 <a href="https://www.nrpa.org/our-work/Grant-Fundraising-Resources/" title="Grant and Fundraising Resources">
+                                 Grant and Fundraising Resources </a>
+                              </h3>
+                           </header>
+                           <div class="description">
+                              <p>NRPA periodically posts information about grants and fundraising opportunities available for park and recreation agencies, affiliated groups and nonprofits.</p>
+                              <p>
+                                 <a href="https://www.nrpa.org/our-work/Grant-Fundraising-Resources/" class="read-more" title="Learn More">Learn More</a>
+                              </p>
+                           </div>
+                        </li>
+                     </ul>
+                  </section>
+                  <div id="pager-container" class="pager-container">
+                     <div class="featured-pager clearfix">
+                        <span class="pager-counter">Page <span class="js-pager-active"></span> of <span class="js-pager-last"></span></span>
+                     </div>
+                  </div>
+                  <section id="mission-section" class="tagline" style="font-style: italic;">
+                     <h2>Improving the health of communities for all people through parks, recreation and conservation.</h2>
+                  </section>
+               </section>
+               <section class="magazine-ad clearfix">
+                  <div class="magazine-module clearfix">
+                     <img src="https://res.cloudinary.com/nrpadev/image/upload/c_fill,f_auto,q_70/2021-August-Magazine-Cover.jpg" alt="2021 August Magazine Cover" title="2021 August Magazine Cover"> 
+                     <div class="text">
+                        <header id="mag-titles">
+                           <h2 id="mag-title">The Magazine!</h2>
+                           <p id="mag-subtitle"><b>Issue overview:</b> </p>
+                        </header>
+                        <div id="mag-links">
+                           <h4><a href="https://www.nrpa.org/link/ed0afa3bec9a4392879ddb4cdad5e4e0.aspx" title="A River Runs Through It">A River Runs Through It</a></h4>
+                           <h4><a href="https://www.nrpa.org/link/e66e66262c734dd4bc26cb6a1660b017.aspx" title="Let the Fun Begin!">Let the Fun Begin!</a></h4>
+                           <h4><a href="https://www.nrpa.org/link/5e211835d2f041488542f61da6efa08e.aspx" title="The Future is Flowing in Fort Wayne">The Future is Flowing in Fort Wayne</a></h4>
+                           <p><a href="https://www.nrpa.org/link/f0d3786baa4c4bccb313999f92f3e545.aspx" title="Read This Issue">Read This Issue</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="ad-container" class="ad-container txtcenter">
+                     <div class="wrapper">
+                        <script type="text/javascript">
+                           var rnd = window.rnd || Math.floor(Math.random()*10e6);
+                           var pid481468 = window.pid481468 || rnd;
+                           var plc481468 = window.plc481468 || 0;
+                           var abkw = window.abkw || '';
+                           var absrc = 'https://servedbyadbutler.com/adserve/;ID=181623;size=300x250;setID=481468;type=js;sw='+screen.width+';sh='+screen.height+';spr='+window.devicePixelRatio+';kw='+abkw+';pid='+pid481468+';place='+(plc481468++)+';rnd='+rnd+';click=CLICK_MACRO_PLACEHOLDER';
+                           document.write('<scr'+'ipt src="'+absrc+'" type="text/javascript"></scr'+'ipt>');
+                        </script> 
+                        <p class="ad-disclaimer txtright">Advertisement</p>
+                     </div>
+                  </div>
+               </section>
+               <footer class="l-footer">
+                  <div id ="footer-container" class="footer-container">
+                     <section class="sitewide-footer-section contact-us">
+                        <div>
+                           <style>
+                              /*
+                                 #h401 {
+                                     color: rgb(153,254,0);
+                                 }
+                                 */
+                           </style>
+                           <img src="./assets/nrpa-new-logo.png" alt="">
+                           <p class="bold-text">National Recreation and Park Association (NRPA)</p>
+                           <p>22377 Belmont Ridge Road<br>
+                           Ashburn, VA 20148-4501<br>
+                           PH: 800.626.NRPA (6772)</p>
+                           <p class="bold-text"><a title="Contact NRPA" href="https://www.nrpa.org/link/d2e65a41598f4969a473f92ace9f2381.aspx">Contact Us</a></p>
+                           <p id="h401" class="bold-text"><a title="Press Inquiries" href="https://www.nrpa.org/link/971c8c0a005c4037bb2cfacfe284c847.aspx">Press Inquiries</a></p>
+                           <p id="h401" class="bold-text"><a title="privacy policy for the National Recreation and Park Association" href="https://www.nrpa.org/link/5a1e759748cb4d7e8294a687eaa533a7.aspx">Privacy Policy</a></p>
+                        </div>
+                     </section>
+                     <section class="sitewide-footer-section email-signup">
+                        <script type="text/javascript" src="https://www.nrpa.org/Static/js/nrpa.realmagnet.10602.js"></script>
+                        <div id="landing_container"></div>
+                     </section>
+                     <section class="sitewide-footer-section field-guide">
+                        <div id="mag-div">
+                           <img src="https://www.nrpa.org/contentassets/603fba2515ce4ee09a40ffefb6455017/2021nrpafieldguide_110x140.jpg" alt="Parks &amp; Recreation Field Guide" title="Parks &amp; Recreation Field Guide">
+                           <div class="clearfix">
+                              <div class="text">
+                                 <header>
+                                    <h4>Parks & Recreation Field Guide</h4>
+                                 </header>
+                                 <p>The Field Guide delivers suppliers, vendors and service providers to park and recreation agencies throughout the United States and Canada.</p>
+                              </div>
+                           </div>
+                           <p>
+                              <a href="https://nrpa.officialbuyersguide.net/" class="btn" title="Learn More">
+                              Learn More
+                              </a>
+                           </p>
+                        </div>
+                     </section>
+                     <section class="sitewide-footer-section social-media">
+                        <header>
+                           <h4>Connect With Us</h4>
+                        </header>
+                        <div class="social-grid clearfix">
+                           <a href="https://www.facebook.com/NationalRecreationandParkAssociation" target="_blank" class="" title="NRPA Facebook"><img src="./assets/facebook-icon.svg" alt=""></a>
+                           <a href="https://twitter.com/nrpa_news" target="_blank" class="" title="NRPA Twitter"><img src="./assets/twitter-icon.svg" alt=""></a>
+                        </div>
+                        <div class="social-grid clearfix">
+                           <a href="https://www.youtube.com/user/NRPA1" target="_blank" class="" title="NRPA YouTube"><img src="./assets/youtuble-icon.svg" alt=""></a>
+                           <a href="https://www.linkedin.com/company/national-recreation-and-park-association" target="_blank" class="" title="NRPA LinkedIn"><img src="./assets/linkedin-icon.svg" alt=""></a>
+                        </div>
+                        <div class="social-grid clearfix">
+                           <a href="https://www.instagram.com/nrpa/" target="_blank" class="" title="NRPA Instagram"><img src="./assets/instagram-icon.svg" alt=""></a>
+                           <a href="https://www.pinterest.com/nrpa/" target="_blank" class="" title="NRPA Pinterest"><img src="./assets/pinterest-icon.svg" alt=""></a>
+                        </div>
+                     </section>
+                  </div>
+               </footer>
+               <div class="mobile-nav-overlay js-nav-overlay">
+                  <nav class="mobile-nav-panel js-nav-panel">
+                     <a href="#" class="right js-nav-btn">X<span class="visuallyhidden">Close</span></a>
+                     <div></div>
+                  </nav>
+               </div>
+               <script>window.jQuery || document.write('<script src="https://www.nrpa.org/Static/js/vendor/jquery-3.5.0.min.js"><\/script>')</script>
+               <script src="https://www.nrpa.org/Static/dest/output1.min.js"></script>
+               <script src="https://www.nrpa.org/Static/js/jquery.plugin.min.js"></script>
+               <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+               <script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.js"></script>
+               <script src="https://www.nrpa.org/Static/js/NormaliseHeightPerRow.js"></script>
+               <script>
+                  function onPushEnterButton(key){
+                      //alert(key.keyCode);
+                      if(key.keyCode == 13){
+                      var searchButton = document.getElementsByClassName("icon-search-blue");
+                      var searchValue = document.getElementsByClassName("search-field");
+                        window.location = "http://"+ window.location.hostname + "/search?query="+searchValue[0].value;
+                           return false;
+                        }else{
+                        return true;}
+                  };
+                  
+                  function swapElements(elm1, elm2) {
+                      var parent1, next1,
+                            parent2, next2;
+                  
+                      parent1 = elm1.parentNode;
+                      next1 = elm1.nextSibling;
+                      parent2 = elm2.parentNode;
+                      next2 = elm2.nextSibling;
+                  
+                      parent1.insertBefore(elm2, next1);
+                      parent2.insertBefore(elm1, next2);
+                      //swapElements($("#switchme1")[0], $("#switchme2")[0]);
+                  }
+                  
+                  function addResponsiveNEssToBlogBlocks() {
+                      $('.block.conferenceinteriorpageteaserblock').addClass('section-bucket normaliseHeight position-relative');
+                      //$('section[role="main"] .block.blogitempageteaserblock').addClass('section-bucket normaliseHeight position-relative');
+                      //$('section[role="main"] .block.articlepageteaserblock').addClass('section-bucket normaliseHeight position-relative');
+                      //$('section[role="main"] .block.magazinearticlepageteaserblock').addClass('section-bucket normaliseHeight position-relative');
+                      //normaliseRowDivs(3, $('.normaliseHeight'));
+                  }
+                        $(document).ready(function () {
+                  
+                            $('.main-slider').slick({ mobileFirst: true, dots: true, autoplay: true, autoplaySpeed: 4000 });
+                            $('.sponsor-slider').slick({ lazyLoad: 'ondemand', mobileFirst: true, dots: false, slidesToShow: 1, autoplay: true, autoplaySpeed: 3000,  responsive: [{ breakpoint: 500, settings: { slidesToShow: 2 } },{ breakpoint: 700, settings: { slidesToShow: 3 } },{ breakpoint: 1000, settings: { slidesToShow: 4 } },{ breakpoint: 1400, settings: { slidesToShow: 5 } } ] });
+                  
+                            $('.js-match-height').matchHeight();
+                            $('.js-match-height-header').matchHeight();
+                  
+                            // Add classes to make tables responsive.
+                            // This should be added to all tables that are not populated from RealMagnet.
+                            $('table:not([class])').addClass('responsive table');
+                  
+                            $.cloudinary.config({ cloud_name: 'nrpa', api_key: '689153733964173' });
+                            $.cloudinary.responsive();
+                  
+                            // startup all accordions
+                            $('.st-accordion').accordion();
+                        if (typeof LoadTable == 'function'){
+                                LoadTable();
+                            }
+                            addResponsiveNEssToBlogBlocks();
+                        });
+                  
+                          $(window).on('load', function () {
+                            $('#topic-nav-panel li:gt(11)').hide();
+                            $('.topic-nav-button').click(function () {
+                                var button = $('.topic-nav-button');
+                                if (button.text() == "+More") {
+                                    $('#topic-nav-panel li:gt(11)').show();
+                                    button.text('-Less');
+                                } else {
+                                    $('#topic-nav-panel li:gt(11)').hide();
+                                    button.text('+More');
+                                }
+                            })
+                  
+                      var searchButton = document.getElementsByClassName("icon-search-blue");
+                      var searchValue = document.getElementsByClassName("search-field");
+                  
+                      searchButton[0].onclick  = function(){
+                      console.log("this");
+                        if(searchValue[0].value != ""){
+                        window.location = "http://"+ window.location.hostname + "/search?query="+searchValue[0].value;
+                         // alert("http://"+ window.location.hostname + "/search?query="+searchValue[0].value)
+                        }
+                  
+                      };
+                      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                          normaliseRowDivs(3, $('.normaliseHeight'));
+                      }
+                      createMobileNavigation(), dropdownPanels(), mobileNavToggle(), initMenuAim(), $(".fitvids").fitVids();
+                        });
+                    
+               </script>
+               <script type="text/javascript">
+                  $(window).bind("load", function () {
+                  
+                      $('.rm-form-input').focus(function () {
+                          $(this).prev().hide();
+                      });
+                  
+                      $('.rm-form-input').focusout(function () {
+                          if ($(this).val() == "") {
+                              $(this).prev().show();
+                          }
+                      });
+                  });
+               </script>
+               <script type="text/javascript">
+                  $('.block').unwrap();
+                  $('.large-bucket').unwrap();
+                  //$('.aside-section').unwrap();
+                  $('.panel').unwrap();
+                  $('.HomeFeature > li').unwrap();
+               </script>
+               <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570c006e2c7392de"></script>
+            </body>
+         </html>
