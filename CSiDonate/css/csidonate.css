@@ -1,0 +1,1337 @@
+html:not(.reb):not(.db),
+body:not(.rebody):not(.csidonate-dashboard) {
+  margin: 0 0 5rem 0;
+  padding: 0;
+  min-width: 400px;
+}
+body.scroll-stop {
+  overflow: hidden !important;
+}
+#iewarning {
+  display: table;
+  width: 100%;
+  background-color: gold;
+  border-bottom: 1px solid goldenrod;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 16px;
+  padding: 10px;
+}
+#iewarning > img {
+  display: table-cell;
+  vertical-align: middle;
+}
+#iewarning > .content {
+  display: table-cell;
+  vertical-align: middle;
+}
+#iewarning > .content img {
+  height: 12px;
+}
+#iewarning > .content a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #005DAB;
+  border-bottom: 1px dotted #005DAB;
+}
+body > .modal-outer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+body > .modal-outer > .modal-inner {
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 7px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: 25vw;
+  max-width: 85vw;
+  padding: 1rem 2rem;
+}
+body > .modal-outer > .modal-inner > p {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  margin: 5px 0;
+}
+body > .modal-outer > .modal-inner .invisible-input {
+  position: absolute;
+  margin: -99999px;
+}
+body > .modal-outer > .modal-inner.trib-message h3 {
+  margin-top: 0;
+}
+body > .modal-outer > .modal-inner.trib-message .msg-editor {
+  width: 100%;
+  height: 12rem;
+  margin-bottom: 0.5rem;
+}
+body > .modal-outer > .modal-inner.trib-message .msg-editor #trib-msg-box {
+  width: 100%;
+  height: 100%;
+  resize: none !important;
+  box-sizing: border-box;
+}
+body > .modal-outer > .modal-inner.trib-message .char-counter {
+  align-self: flex-start;
+}
+body > .modal-outer > .modal-inner.trib-message .banner-selector,
+body > .modal-outer > .modal-inner.trib-message .merge-code-selector {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+body > .modal-outer > .modal-inner.trib-message .banner-select-preview {
+  max-width: 30rem;
+}
+body > .modal-outer > .modal-inner.trib-message #banner-preview-img {
+  width: 100%;
+  margin-top: 1rem;
+}
+body > .modal-outer > .modal-inner.trib-message .trib-controls {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search {
+  height: 80vh;
+  width: 70vw;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search > h3:first-of-type {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .search-area {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .search-area .field {
+  width: 45%;
+  padding: 0.5rem;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .search-area .field label {
+  display: inline-block;
+  width: 200px;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area {
+  width: 99%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area table {
+  border-collapse: collapse;
+  min-width: 75%;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area table thead > tr > th {
+  text-align: left;
+  background-color: #DDD;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area table th,
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area table td {
+  padding: 0.2rem 0.4rem;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area table tr.result-row {
+  cursor: pointer;
+  user-select: none;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area table tr:nth-child(2n) {
+  background-color: #F5F5F5;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .results-area table tr:hover {
+  background-color: #EEE;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .error-area {
+  margin-top: 5rem;
+  border: 1px solid #CCC;
+  background-color: #FAFAFA;
+  padding: 1rem 1rem 0;
+  box-sizing: border-box;
+  text-align: center;
+  width: 97%;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .error-area .error-title {
+  font-size: 1.2rem;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .error-area .error-message {
+  font-size: 0.9rem;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .buttons {
+  width: 100%;
+  margin: 1rem 0;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .buttons button {
+  margin: 0 0.5rem;
+  border: 0;
+  background-color: #DDD;
+  padding: 6px 20px;
+  font-size: 1.05rem;
+  border-radius: 5px;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .buttons button:hover {
+  background-color: #EAEAEA;
+}
+body > .modal-outer > .modal-inner.trib-mbr-search .buttons button:active {
+  background-color: #D5D5D5;
+}
+#csidonate {
+  width: 100%;
+  font-size: 14px;
+}
+#csidonate input,
+#csidonate textarea,
+#csidonate button,
+#csidonate select {
+  outline: none;
+  box-sizing: border-box;
+}
+#csidonate input[type=text],
+#csidonate input[type=email],
+#csidonate input[type=tel],
+#csidonate input[type=number],
+#csidonate input[type=url],
+#csidonate select {
+  height: 31px;
+}
+#csidonate input[type=text],
+#csidonate input[type=email],
+#csidonate input[type=tel],
+#csidonate input[type=number],
+#csidonate input[type=url],
+#csidonate select,
+#csidonate textarea {
+  padding: 0 0.25em;
+}
+#csidonate input[type=text],
+#csidonate input[type=email],
+#csidonate input[type=tel],
+#csidonate input[type=number],
+#csidonate input[type=url],
+#csidonate select,
+#csidonate textarea,
+#csidonate input[type=submit],
+#csidonate input[type=reset],
+#csidonate button {
+  font-size: 13px;
+}
+#csidonate input[type=number] {
+  -moz-appearance: textfield;
+}
+#csidonate input::-webkit-outer-spin-button,
+#csidonate input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+#csidonate input[disabled],
+#csidonate textarea[disabled],
+#csidonate button[disabled],
+#csidonate select[disabled],
+#csidonate input:disabled,
+#csidonate textarea:disabled,
+#csidonate button:disabled,
+#csidonate select:disabled {
+  background-color: #ECECEC;
+  opacity: 0.7;
+}
+#csidonate textarea {
+  min-height: 5rem;
+  max-height: 45rem;
+  resize: vertical;
+}
+#csidonate p {
+  margin: 0;
+}
+#csidonate form {
+  width: 100%;
+}
+#csidonate a.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#csidonate a.link.button {
+  display: inline-block;
+  background-color: #006600;
+  color: white;
+  margin: 1.5rem 0 0.5rem 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: normal;
+  text-decoration: none;
+  border-radius: 5px;
+}
+#csidonate a.link.button:hover {
+  box-shadow: inset 0 -4px #003300;
+}
+#csidonate .small {
+  font-size: 0.7em;
+}
+#csidonate .inner-container {
+  max-width: 1000px;
+  width: 95%;
+  margin: 1em auto;
+  padding: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+}
+#csidonate .inner-container .shroud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #EEE;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+#csidonate .inner-container .shroud .content {
+  text-align: center;
+}
+#csidonate .inner-container .shroud .content h2 {
+  font-size: 2.75rem;
+  font-weight: 200;
+}
+#csidonate .inner-container .header .logo {
+  display: block;
+}
+#csidonate .inner-container .header .logo[href] {
+  cursor: pointer;
+}
+#csidonate .inner-container .header .logo[href=""] {
+  cursor: default;
+}
+#csidonate h1.page-header {
+  margin-top: 2rem;
+  font-size: 2.25rem;
+  font-weight: 300;
+}
+#csidonate div.sub-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+#csidonate .row {
+  margin: 0.75rem 0;
+}
+#csidonate .row .label {
+  display: inline-block;
+  width: 155px;
+  vertical-align: middle;
+}
+#csidonate .row .label > span,
+#csidonate .row .label > label,
+#csidonate .row .label > div {
+  display: inline-block;
+  width: 135px;
+}
+#csidonate .row .separate.label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.25em;
+}
+#csidonate .row .separate.label > span,
+#csidonate .row .separate.label > label,
+#csidonate .row .separate.label > div {
+  display: block;
+  width: 100%;
+}
+#csidonate .row .separate.label + .field > input:not(:first-child) {
+  display: inline-block;
+  margin-left: 1.5em;
+}
+#csidonate .row .field {
+  display: inline-block;
+  position: relative;
+  width: 250px;
+  vertical-align: middle;
+}
+#csidonate .row .field:not(.flex) > input[type=text],
+#csidonate .row .field:not(.inline) > input[type=text],
+#csidonate .row .field:not(.flex) input[type=email],
+#csidonate .row .field:not(.inline) input[type=email],
+#csidonate .row .field:not(.flex) input[type=tel],
+#csidonate .row .field:not(.inline) input[type=tel],
+#csidonate .row .field:not(.flex) input[type=number],
+#csidonate .row .field:not(.inline) input[type=number],
+#csidonate .row .field:not(.flex) input[type=url],
+#csidonate .row .field:not(.inline) input[type=url],
+#csidonate .row .field:not(.flex) > textarea,
+#csidonate .row .field:not(.inline) > textarea,
+#csidonate .row .field:not(.flex) > select,
+#csidonate .row .field:not(.inline) > select {
+  width: 100%;
+  max-width: 400px;
+}
+#csidonate .row .field select.single-option {
+  display: none;
+}
+#csidonate .row .field span[id*="_rfv"],
+#csidonate .row .field span[id*="_Required"],
+#csidonate .row .field span[id*="_Val"] {
+  position: absolute;
+  font-weight: bold;
+  top: 3px;
+  left: -16px;
+  width: 15px;
+  font-size: 24px;
+  color: #C33;
+  display: inline-block !important;
+}
+#csidonate .row .field span[id^=rfv],
+#csidonate .row .field span[id^=rev] {
+  display: inline;
+  color: transparent;
+}
+#csidonate .row .field span[id^=rfv]:before,
+#csidonate .row .field span[id^=rev]:before {
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  left: -25px;
+  top: -3px;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border: 10px solid transparent;
+  border-bottom: 20px solid #CC0000;
+  border-radius: 3px;
+}
+#csidonate .row .field span[id^=rfv]:after,
+#csidonate .row .field span[id^=rev]:after {
+  content: '!';
+  display: inline-block;
+  position: absolute;
+  left: -18px;
+  top: 9px;
+  font-size: 16px;
+  font-family: Georgia, sans-serif !important;
+  font-weight: bold;
+  overflow: visible;
+  line-height: 1.3;
+  color: white;
+}
+#csidonate .wide.field {
+  width: 375px;
+}
+#csidonate .inline.flex.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#csidonate .inline.flex.spaced.row {
+  align-items: center;
+}
+#csidonate .inline.flex.spaced.row > * {
+  margin-right: 0.8em;
+}
+#csidonate .inline.flex.indented.field {
+  margin-left: 155px;
+}
+#csidonate .inline.flex.subrow {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+}
+#csidonate .inline.flex.subrow > * {
+  margin-right: 0.8em;
+}
+#csidonate .inline.flex.subrow > label:last-child {
+  margin-right: 0.4em;
+}
+#csidonate .inline.flex.field {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  width: calc(90% -  135px );
+  align-items: center;
+}
+#csidonate .inline.flex.field.drop-down {
+  display: inline-block;
+}
+#csidonate .inline.flex.field > * {
+  margin-right: 1em;
+}
+#csidonate .inline.flex.field.full {
+  width: 95%;
+}
+#csidonate .sub-section {
+  display: flex;
+  flex-flow: column nowrap;
+}
+#csidonate .sub-section .row {
+  margin: 0.375rem 0;
+}
+#csidonate .multi-trib .trib .row label {
+  min-width: 10rem;
+}
+#csidonate .profile-update-link {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.75);
+  border-right: 1px solid rgba(128, 128, 128, 0.75);
+  border-top: 1px solid rgba(192, 192, 192, 0.5);
+  border-left: 1px solid rgba(192, 192, 192, 0.5);
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+#csidonate .profile-update-link:hover {
+  background-color: #ffffff;
+  border-bottom: 1px solid #808080;
+  border-right: 1px solid #808080;
+  border-top: 1px solid #d2d2d2;
+  border-left: 1px solid #d2d2d2;
+  cursor: pointer;
+}
+#csidonate .challenge-info .progress-outer {
+  width: calc(100% - 10rem);
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 7px;
+  margin: 0 5rem 0 5rem;
+  padding: 4px;
+}
+#csidonate .challenge-info .progress-inner {
+  display: inline-block;
+  height: 24px;
+  background-color: #639763;
+  border-radius: 7px;
+  min-width: 10px;
+}
+#csidonate .challenge-info > .label {
+  text-align: center;
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 899px) {
+  #csidonate .section,
+  #csidonate .sub-section,
+  #csidonate #tribute {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #csidonate #row-amount table,
+  #csidonate #row-amount tbody {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+  #csidonate #row-amount tr {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 100%;
+  }
+  #csidonate #row-amount tr td {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #csidonate .inline.flex.field {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    min-width: 250px;
+  }
+  #csidonate .inline.flex.indented.field {
+    flex-flow: row wrap;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+  #csidonate .inline.flex.indented.field label {
+    width: calc(100% - 50px);
+  }
+  #csidonate div#RowListAs {
+    display: block;
+  }
+  #csidonate div#RowListAs .label {
+    margin-right: 0px;
+  }
+}
+#csidonate .section,
+#csidonate .sub-section {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+#csidonate .section .row:first-child,
+#csidonate .sub-section .row:first-child,
+#csidonate .section .first.row,
+#csidonate .sub-section .first.row {
+  margin-top: 0;
+}
+#csidonate .section .row:last-child,
+#csidonate .sub-section .row:last-child,
+#csidonate .section .last.row,
+#csidonate .sub-section .last.row {
+  margin-bottom: 0;
+}
+#csidonate .sub-section {
+  padding: 0;
+  margin: 0;
+}
+#csidonate .card-logo {
+  height: 27px;
+  width: 43px;
+}
+#csidonate .card-logo.faded {
+  opacity: 0.2;
+}
+#csidonate #trib-add-on > a,
+#csidonate #trib-add-off > a {
+  cursor: pointer;
+  user-select: none;
+  color: inherit;
+  text-decoration: none;
+}
+#csidonate #trib-add-off > a {
+  opacity: 0.6;
+  pointer-events: none;
+}
+#csidonate .trib {
+  margin: 1.5rem 0;
+  position: relative;
+}
+#csidonate .trib:first-of-type {
+  margin-top: 0;
+}
+#csidonate .trib input[name="mtEmail"],
+#csidonate .trib input[name="mtName"],
+#csidonate .trib input.read-only {
+  width: 391px;
+}
+#csidonate .trib .trib-button {
+  user-select: none;
+}
+#csidonate .trib .trib-button img {
+  height: 17px;
+  vertical-align: middle;
+}
+#csidonate .trib:hover .controls {
+  opacity: 1;
+}
+#csidonate .trib:only-of-type .controls {
+  display: none !important;
+}
+#csidonate #RowListAs {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+#csidonate #RowListAs .label {
+  margin-right: 4px;
+}
+#csidonate #RowListAs .field {
+  max-width: 298px;
+}
+#csidonate #RowListAs .field-extra {
+  margin-left: 1rem;
+}
+#csidonate .donation-options {
+  text-align: center;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+#csidonate .donation-options .option {
+  margin: 0.5rem 0;
+}
+#csidonate .donation-options #feeCalc {
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+  font-size: 1.4rem;
+}
+#csidonate .donation-options #recurFeeNote {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+#csidonate .donation-options #donor-wall-note {
+  margin-top: 0.5rem;
+}
+#csidonate .submit {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+#csidonate .submit #wait {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+#csidonate .submit #wait p {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#csidonate .submit .submit-button {
+  margin: 1em;
+}
+#csidonate .submit .submit-button:disabled {
+  background-color: #AAA;
+}
+#csidonate .header {
+  margin: 1em 0;
+}
+#csidonate h1,
+#csidonate h2,
+#csidonate h3,
+#csidonate h4,
+#csidonate h5,
+#csidonate h6 {
+  margin: 0 0 0.5em 0;
+}
+@media only screen and (max-width: 600px) {
+  #csidonate div[id$=divFundTree] {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    align-items: stretch;
+  }
+}
+#csidonate div[id$=divFundTree] .field .fund-text {
+  width: 350px;
+  padding-right: 23px;
+  cursor: pointer;
+}
+#csidonate div[id$=divFundTree] .field:after {
+  pointer-events: none;
+  content: '\25BC';
+  color: #222;
+  display: inline-block;
+  position: absolute;
+  left: calc(350px - 22px);
+  background-color: transparent;
+  top: 6px;
+}
+@media only screen and (max-width: 600px) {
+  #csidonate div[id$=divFundTree] .field:after {
+    top: 2px;
+    right: 7px;
+  }
+}
+#csidonate div[id$=divFundTree] .field .fund-tree {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 500px;
+  height: 350px;
+  z-index: 9999;
+  overflow: auto;
+  background-color: white;
+  padding: 0.25rem;
+  border: 1px solid #777;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.4);
+  line-height: 0.5;
+}
+@media only screen and (max-width: 899px) {
+  #csidonate div[id$=divFundTree] .field .fund-tree {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #csidonate div[id$=divFundTree] .field .fund-tree {
+    width: 80vw;
+  }
+}
+#csidonate div[id$=divFundTree] .field .fund-tree .fund-tree-header {
+  font-weight: bold;
+}
+#csidonate div[id$=divFundTree] .field .fund-tree .fund-tree-header,
+#csidonate div[id$=divFundTree] .field .fund-tree .fund-tree-header:active,
+#csidonate div[id$=divFundTree] .field .fund-tree .fund-tree-header:hover,
+#csidonate div[id$=divFundTree] .field .fund-tree .fund-tree-header:visited {
+  color: black;
+}
+#csidonate div[id$="CustomAmountSelector"] > span {
+  display: block;
+  margin-top: 1rem;
+}
+#csidonate .amount-selector div.amount,
+#csidonate .custom-amount .amt-container {
+  height: 50px;
+  min-width: 80px;
+  padding: 0 0.75rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  border-radius: 3px;
+  transition: all 75ms;
+}
+#csidonate .amount-selector div.amount:before,
+#csidonate .custom-amount .amt-container:before {
+  content: '$';
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-left: -0.75rem;
+  margin-right: 1rem;
+}
+#csidonate .amount-selector > tbody > tr {
+  display: flex;
+  flex-flow: row wrap;
+}
+#csidonate .amount-selector div.amount {
+  cursor: pointer;
+}
+#csidonate .amount-selector input[type=radio]:checked ~ div.amount {
+  font-weight: bold;
+}
+#csidonate .custom-amount {
+  margin-top: 0;
+}
+#csidonate .custom-amount .amt-container {
+  width: 200px;
+}
+#csidonate .custom-amount .amt-container input[type=number] {
+  height: 100%;
+  width: 90%;
+  margin: 0;
+  border: 0;
+  font-size: 1.5rem;
+  background-color: transparent;
+  outline: none;
+}
+#csidonate div#ccWarning {
+  background-color: #fff6c4;
+  color: #635404;
+  font-size: 11px;
+  padding: 5px;
+  border: 1px solid #635404;
+  border-radius: 4px;
+}
+#csidonate div#ccWarning span.warning {
+  font-weight: bold;
+  text-decoration: underline;
+}
+#csidonate div#ccError {
+  background-color: #f6d3cf;
+  color: #631004;
+  font-size: 11px;
+  padding: 5px;
+  border: 1px solid #631004;
+  border-radius: 4px;
+}
+#csidonate div#ccError span.error {
+  font-weight: bold;
+  text-decoration: underline;
+}
+#csidonate div.error {
+  background-color: #FFEEEE;
+  border: 1px solid #990000;
+  border-radius: 5px;
+  margin: 1em 0;
+  padding: 1em;
+  color: #990000;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+#csidonate div.error p {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+#csidonate div.error ul {
+  margin: 0.5em 0 0 0;
+  padding-left: 2em;
+}
+#csidonate div.error small {
+  display: block;
+  margin-top: 0.5rem;
+}
+#csidonate label.error {
+  color: #CC0000;
+  display: block;
+}
+#csidonate label.error:before {
+  display: inline-block;
+  content: '\25CF';
+  padding: 0 0.4rem;
+}
+#csidonate *[id^=payType] {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+#csidonate *[id^=payType]:disabled {
+  display: none !important;
+}
+#csidonate *[id^=payType]:hover:not(:disabled) {
+  background-color: #FCFCFC;
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.08);
+}
+#csidonate *[id^=payType] img {
+  height: 32px;
+  margin-right: 0.5rem;
+}
+#csidonate *[id^=payType]:disabled img {
+  opacity: 0.5;
+}
+#csidonate .active[id^=payType] {
+  background-color: #FFF;
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.14);
+}
+#csidonate #rounding-error {
+  display: inline-block;
+  background-color: #EEFCFF;
+  border: 1px solid #66CCFF;
+  border-radius: 5px;
+  padding: 0.3rem 0.25rem 0.3rem 1.75rem;
+  font-size: 0.7rem;
+  position: relative;
+}
+#csidonate #rounding-error:before {
+  content: 'i';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  font-family: 'Times New Roman';
+  font-size: 20px;
+  font-weight: 900;
+  color: #EEEEEE;
+  background-color: #006699;
+  border-radius: 15px;
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  line-height: 18px;
+}
+#csidonate #rounding-error #real-amount {
+  font-weight: bold;
+}
+#popup-bg {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#popup {
+  z-index: 1100;
+  position: fixed;
+  top: 30%;
+  text-align: center;
+  width: 100%;
+}
+#popup .container {
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 500px;
+  background-color: #EEE;
+  padding: 0.25rem 0.5rem 1.5rem 0.5rem;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+#popup .container input[type=text] {
+  font-size: 13px;
+}
+#receipt {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+#receipt h1 {
+  font-size: 3em;
+  font-weight: 100;
+  text-align: center;
+}
+#receipt h1 ~ p {
+  margin-top: -1rem;
+  text-align: center;
+}
+#receipt h2 {
+  font-weight: 400;
+  font-size: 1.6em;
+  margin-bottom: 0.5rem;
+}
+#receipt h3 {
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 0.6rem;
+}
+#receipt .container {
+  padding: 1rem;
+  padding-bottom: 3.45rem;
+}
+#receipt .amount.field {
+  text-align: center;
+  font-size: 2.5em;
+}
+#receipt .recurring.field {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+#receipt .confirmation.field {
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+#receipt .help.row {
+  display: block;
+  border: 1px solid #005DAB;
+  background-color: #DDEFFF;
+  padding: 0.5rem;
+  font-size: 0.85em;
+}
+#receipt .help.row p {
+  margin: 0.25rem 0;
+}
+#receipt .help.row h4 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: 400;
+}
+#receipt .row {
+  margin: 0.5em 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+#receipt .row .label {
+  width: 125px;
+  font-weight: 500;
+  flex: 0 0 auto;
+}
+#receipt .row .tip.link {
+  color: #005DAB;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+#receipt .row.slim {
+  margin-top: -0.5rem !important;
+}
+#receipt .demo-q {
+  margin: 0.75rem 0;
+}
+#receipt .demo-q .question {
+  font-weight: 500;
+}
+#receipt .demo-q .answer {
+  display: inline-block;
+  margin-left: 1rem;
+}
+#receipt .demo-q .answer:before {
+  content: '\00BB';
+  font-size: 1.5em;
+  line-height: 1rem;
+  margin-right: 0.5rem;
+}
+#receipt .gift.note {
+  padding: 0.25rem;
+  background-color: #F2F2F2;
+  border: 1px dashed #CCC;
+  margin-bottom: 32px;
+}
+#receipt .section h2 ~ p {
+  color: #777;
+  margin: 0;
+}
+#receipt .nav.links {
+  margin-top: 2rem;
+  text-align: center;
+}
+#receipt .nav.links a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+}
+#receipt .social {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+#receipt .social div {
+  margin: 0 0.5rem;
+}
+#receipt .recurring-error {
+  background-color: #FFF7DD;
+  border: 1px solid #998800;
+  color: #554400;
+  padding: 0 0.5rem;
+  font-size: 14px;
+}
+#receipt .recurring-error p {
+  margin: 0.5rem 0;
+}
+#receipt .print {
+  float: right;
+  margin-top: -0.5rem;
+  padding: 0.25rem 0.5rem 0 0.5rem;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1;
+}
+#receipt .print:hover {
+  background-color: #EEEEEE;
+}
+#receipt .print img {
+  height: 28px;
+  vertical-align: middle;
+  margin: 3px 0.25em 3px 0;
+}
+#receipt .print a {
+  color: #777;
+  text-decoration: none;
+}
+#receipt .error {
+  color: #990000;
+  font-weight: 500;
+  text-align: center;
+}
+@media print {
+  #receipt .print {
+    display: none;
+  }
+  #receipt .container {
+    border: 1px solid #555;
+    box-shadow: none;
+  }
+  #receipt .nav.links {
+    display: none;
+  }
+  #receipt .social {
+    display: none;
+  }
+  #receipt .row .tip.link {
+    display: none;
+  }
+}
+/*************************************************************************
+    Copy below and paste into your LESS file to use as a base style
+**************************************************************************/
+.html {
+  font-size: 10px;
+}
+.buttonDisabled {
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/cabin/v18/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7mlx17r.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/cabin/v18/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7ilx17r.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/cabin/v18/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7alxw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+html,
+body,
+#csidonate {
+  font-size: 16px;
+  font-family: "Cabin", Trebuchet, Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+}
+html,
+body {
+  background-color: #00584c;
+}
+h1 {
+  color: #00584c;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cabin", Trebuchet, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  margin: 0.4em 0;
+  color: #02a99f !important;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 1px;
+}
+a, a span {
+  color: #00584c !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h2:not(.sub-header) {
+  color: #80bd01;
+}
+p {
+  color: #000;
+}
+#csidonate .inner-container {
+  background-color: #FFFFFF;
+  max-width: 1000px;
+  padding: 1rem;
+}
+#csidonate .inner-container .header .logo {
+  background-image: url('../img/nrpa_logo.png');
+  height: 100px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+}
+#csidonate .inner-container .page-header {
+  margin-top: 0.5rem;
+}
+#csidonate .inner-container .member-login.button {
+  background-color: #003764;
+  color: #F0F1E9;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  text-decoration: none;
+}
+#csidonate .inner-container .member-login.button:hover {
+  background-color: #064477;
+  text-decoration: underline;
+}
+#csidonate .inner-container .form-container .section {
+  background-color: #F0F1E9;
+  border: 1px solid #003764;
+  border-radius: 5px;
+}
+#csidonate .inner-container .form-container .section .row input[id$="btnNotMe"] {
+  background-color: #003764;
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border: 0;
+  font-size: 16px;
+}
+#csidonate .inner-container .custom-amount .amt-container {
+  background-color: #FFFFFF;
+  color: #003764;
+  border: 2px solid #003764;
+  margin-top: 0;
+}
+#csidonate .inner-container .amount-selector .amount {
+  background-color:#80bd01;
+  color: #FFFFFF;
+}
+#csidonate .inner-container .amount-selector .amount:before {
+  /* background-color: #003764; */
+  color: #FFFFFF;
+}
+#csidonate .inner-container .amount-selector .amount:hover {
+  transform: scale(1.05);
+}
+#csidonate .inner-container .amount-selector input[id*=amtChooser]:checked ~ .amount {
+  transform: scale(1.2);
+  background-color: #80bd01;
+  color: #FFFFFF;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+}
+#csidonate .inner-container .amount-selector input[id*=amtChooser]:checked ~ .amount:before {
+  background-color: #80bd01;
+}
+#csidonate .inner-container .submit .submit-button {
+  background-color: #80bd01;
+  color: #FFFFFF;
+  font-family: "Cabin", Trebuchet, Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  border: 0;
+  padding: 0.75rem 2rem;
+  border-radius: 35px;
+  transition: all 250ms;
+}
+#csidonate .inner-container .submit .submit-button:hover {
+  background-color: #91d601;
+  box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2);
+  transform: scale(1.09);
+}
+#csidonate .inner-container .submit .submit-button:active {
+  background-color: #6fa401;
+}
+#csidonate .submit:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 72px;
+  background-image: url(/CSiDonate/File.aspx/8cf22049-eb4a-4f10-a896-88e339e1d173/RapidSSLSeal.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  border-top: 1px solid #003764;
+}
+#csidonate .footer:before {
+  content: 'The Internal Revenue Service has determined that the National Recreation and Park Association (NRPA) is a 501(c)(3) organization and contributions to NRPA are tax-deductible to the extent allowed by law. The NRPA identification number is 13-5563001.';
+  display: block;
+  color: black;
+  height: 38px;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.92rem;
+}
+#receipt h1,
+#receipt p {
+  color: #FFFFFF;
+}
+#receipt h3 {
+  color: #80bd01;
+}
+#receipt .container {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+#receipt .nav.links a {
+  background-color: #80bd01;
+  color: #FFFFFF;
+}
+#receipt .nav.links a:hover {
+  background-color: #91d601;
+}
+#receipt .nav.links a:active {
+  background-color: #6fa401;
+}
