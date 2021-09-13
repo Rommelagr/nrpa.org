@@ -644,7 +644,7 @@ cite {
 @media screen and (min-width:600px) {
 	.main-slider {
 		height: 35.71429vw;
-		max-height: 535px
+		/* max-height: 535px */
 	}
 }
 
@@ -723,7 +723,7 @@ cite {
 	height: 100%;
 	min-height: 1px;
 	position: relative;
-	max-width: 1500px;
+	/* max-width: 1500px; */
 	margin-left: auto;
 	margin-right: auto;
 	display: none
@@ -884,7 +884,7 @@ cite {
 }
 
 .slick-slider {
-	max-width: 1500px;
+	/* max-width: 1500px; */
 	margin-left: auto;
 	margin-right: auto;
 	overflow: hidden
@@ -1019,7 +1019,7 @@ cite {
 @media screen and (min-width:1200px) {
 	.main-slider {
 		height: 35.71429vw;
-		max-height: 535px
+		/* max-height: 535px */
 	}
 }
 
@@ -4409,25 +4409,38 @@ blockquote {
 	}
 }
 
-.tagline {
+.main-separator {
+	width: 90%;
+	border-top: 1px #6fdac8 solid;
+	margin: 30px 0;
+}
+
+.mission-and-video {
 	font-style: italic;
 	text-align: center;
 	max-width: 1500px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 2em;
-	margin-bottom: 2.8em
+	margin-top: 2.8em;
+	margin-bottom: 2.8em;
 }
 
-.tagline:after {
-	content: " ";
-	display: block;
-	clear: both
-}
-
-.tagline h2 {
+.mission-and-video h2 {
+    color: #00584d;
+    max-width: 680px;
+    margin-left: auto;
+	margin-right: auto;
 	font-weight: 400;
-	color: #111
+}
+
+.video-container {
+	margin: 30px auto 0;
+	width: 900px;
+}
+
+.mission {
+	margin: 60px 0;
+	font-style: normal;
 }
 
 .l-footer {
@@ -4524,7 +4537,7 @@ blockquote {
 	}
 	.sitewide-footer-section {
 		text-align: left;
-		height: 480px
+		height: 700px
 	}
 	.sitewide-footer-section img {
 		margin: 0 0 30px
@@ -4577,7 +4590,6 @@ blockquote {
 		float: right;
 		padding-left: .71429%;
 		padding-right: .71429%;
-		padding-left: 30px;
 		padding-right: 30px;
 		border-top: none;
 		border-left: 1px solid #d2d2d2
@@ -5911,6 +5923,10 @@ input[type="search"].search-field::placeholder {
 	border-left: 16px solid #00584c;
 }
 
+.main-slider img {
+	width: 100vw;
+}
+
 .featured-items .slick-prev.slick-disabled, .featured-items .slick-next.slick-disabled {
 	border: 0 !important;
 	transition: opacity 2s linear;
@@ -6052,7 +6068,7 @@ input[type="search"].search-field::placeholder {
 	color: #00584c;
 	border-left: solid #00584c 2px;
 	border-right: solid #00584c 2px;
-	padding: 0 60px 60px;
+	padding: 0 30px 30px;
 }
 
 #mag-div > p {
