@@ -1,0 +1,254 @@
+@import '/CSiDonate/css/layout.less';
+@import '/CSiDonate/css/base-mixins.less';
+
+
+// "Cabin" Font
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+// NRPA variables
+@nrpablue: #003764;
+@nrpagreen: #80bd01;
+@nrpateal: #41797B;
+@nrpalightblue: #285376;
+@nrpagray: #F0F1E9;
+@white: #FFFFFF;
+
+html,body,#csidonate
+{
+    font-size: 16px;
+    font-family: "Cabin",Trebuchet,Helvetica,Arial,sans-serif;
+    line-height: 1.25;
+}
+
+html,body
+{
+    background-color: #00584c;
+}
+
+h1 {
+    color: #00584c;
+}
+
+h2,h3,h4,h5,h6
+{
+    font-family: "Cabin",Trebuchet,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    margin: .4em 0;
+    color: #02a99f !important;
+}
+
+h2,h3,h4,h5,h6
+{
+    letter-spacing: 1px;
+}
+
+}
+a, a span {
+  color: #00584c !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h2:not(.sub-header)
+{
+    color: @nrpagreen;
+}
+
+p {
+    color: #000;
+}
+
+#csidonate
+{
+    .inner-container
+    {
+        background-color: @white;
+        max-width: 1000px;
+        padding: 1rem;
+
+        .header .logo
+        {
+            background-image: url('../img/nrpa_logo.png');
+            height: 100px;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: contain;
+        }
+
+        .page-header
+        {
+            margin-top: 0.5rem;
+        }
+
+        .member-login.button
+        {
+            background-color: @nrpablue;
+            color: @nrpagray;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            text-decoration: none;
+
+            &:hover
+            {
+                background-color: desaturate(lighten(@nrpablue, 5%), 10%);
+                text-decoration: underline;
+            }
+        }
+
+        .form-container
+        {
+            .section
+            {
+                background-color: @nrpagray;
+                border: 1px solid @nrpablue;
+                border-radius: 5px;
+
+                .row 
+                {
+                    input[id$="btnNotMe"]
+                    {
+                        background-color: @nrpablue;
+                        color: @white;
+                        padding: 0.5rem 1rem;
+                        border: 0;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .custom-amount 
+        {
+            .amt-container
+            {
+                background-color: @white;
+                color: @nrpablue;
+                border: 2px solid @nrpablue;
+                margin-top: 0;
+            }
+        }
+
+        .amount-selector
+        {
+            .amount
+            {
+                background-color:#80bd01;
+                color: #FFFFFF;
+
+                &:before
+                {
+                    color: @white;
+                }
+
+                &:hover
+                {
+                    transform: scale(1.05);
+                }
+            }
+
+            input[id*=amtChooser]:checked ~ .amount
+            {
+                transform: scale(1.2);
+                background-color: @nrpagreen;
+                color: @white;
+                box-shadow: 0px 3px 10px rgba(0,0,0,0.25);
+
+                &:before
+                {
+                    background-color: @nrpagreen;
+                }
+            }
+        }
+
+        .submit
+        {
+            .submit-button
+            {
+                background-color: @nrpagreen;
+                color: @white;
+                font-family: "Cabin",Trebuchet,Helvetica,Arial,sans-serif;
+                font-size: 1.5rem;
+                border: 0;
+                padding: .75rem 2rem;
+                border-radius: 3px;
+
+                transition: all 250ms;
+
+                &:hover
+                {
+                    background-color: lighten(@nrpagreen, 5%);
+                    box-shadow: 0 5px 10px 2px rgba(0,0,0,0.2);
+                    transform: scale(1.09);
+                }
+
+                &:active
+                {
+                    background-color: darken(@nrpagreen, 5%);
+                }
+            }
+        }
+    }
+
+    // A few customizations requested by NRPA on 1/19/2017 (ref: #65099)
+    .submit:after
+    {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 72px;
+        background-image: url(/CSiDonate/File.aspx/8cf22049-eb4a-4f10-a896-88e339e1d173/RapidSSLSeal.gif);
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        border-top: 1px solid @nrpablue;
+    }
+    .footer:before
+    {
+        content: 'The Internal Revenue Service has determined that the National Recreation and Park Association (NRPA) is a 501(c)(3) organization and contributions to NRPA are tax-deductible to the extent allowed by law. The NRPA identification number is 13-5563001.';
+        display: block;
+        color: black;
+        height: 38px;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.92rem;
+    }
+}
+
+// Receipt
+#receipt
+{
+    h1, p
+    {
+        color: @white;
+    }
+
+    h3
+    {
+        color: @nrpagreen;
+    }
+
+    .container
+    {
+        background-color: @white;
+        border-radius: 5px;
+    }
+
+    .nav.links a
+    {
+        background-color: @nrpagreen;
+        color: @white;
+
+        &:hover
+        {
+            background-color: lighten(@nrpagreen, 5%);
+        }
+        &:active
+        {
+            background-color: darken(@nrpagreen, 5%);
+        }
+    }
+}
